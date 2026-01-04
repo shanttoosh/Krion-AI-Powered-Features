@@ -1,0 +1,411 @@
+/* Krion Consulting - Official Theme */
+
+:root {
+    --primary-color: #e8c11f;
+    --primary-color2: #e8c11f;
+    --secondary-color1: #ffffff;
+    --secondary-color: #222221;
+    --White-color: #ffffff;
+    --text-color: #222221;
+    --background-color: #f0f0f0;
+    --scrollbar-color: #aab7cf;
+    --text-color-grey: #666666;
+    --text-color-lightgrey: #999999;
+    --border-color: #dee2e6;
+    --blueofficial: #197aad;
+    --greenofficial: #13bfa0;
+    --black-color: #222221;
+    --lightblue: #dcf3ff;
+    --bs-blue: #197aad;
+    --bs-red: #da292e;
+    --bs-orange: #f8765f;
+    --bs-yellow: #f4bd61;
+    --bs-green: #2fb380;
+    --bs-cyan: #287bb5;
+    --bs-gray: #6c757d;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-success: #2fb380;
+    --bs-danger: #da292e;
+    --bs-warning: #f4bd61;
+    --bs-light-warning: #fdf6e8;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --radius: 6px;
+    --radius-lg: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--primary-color);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--secondary-color);
+}
+
+.logo-text {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--White-color);
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 16px 12px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 4px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--White-color);
+}
+
+.nav-item.active {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.nav-icon {
+    font-size: 18px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.header {
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--White-color);
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.status-badge {
+    padding: 6px 14px;
+    background: var(--bs-light-warning);
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--bs-yellow);
+    font-weight: 500;
+    border: 1px solid var(--bs-yellow);
+}
+
+/* Form Sections */
+.form-section {
+    display: none;
+    padding: 32px;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--White-color);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color-grey);
+}
+
+.required {
+    color: var(--bs-danger);
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 16px;
+    background: var(--White-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    color: var(--text-color);
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(232, 193, 31, 0.2);
+}
+
+.form-group input::placeholder {
+    color: var(--text-color-lightgrey);
+}
+
+/* Description Section */
+.description-section {
+    background: var(--bs-gray-100);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.description-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.description-header label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.generation-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.generation-controls select {
+    padding: 8px 12px;
+    background: var(--White-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+.description-section textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 16px;
+    background: var(--White-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    color: var(--text-color);
+    font-size: 14px;
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.6;
+}
+
+.description-section textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(232, 193, 31, 0.2);
+}
+
+.description-section textarea::placeholder {
+    color: var(--text-color-lightgrey);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.btn-icon {
+    font-size: 16px;
+}
+
+.btn-generate {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.btn-generate:hover {
+    background: #d4ae1a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(232, 193, 31, 0.4);
+}
+
+.btn-primary {
+    background: var(--blueofficial);
+    color: var(--White-color);
+}
+
+.btn-primary:hover {
+    background: #146891;
+}
+
+.btn-secondary {
+    background: var(--White-color);
+    color: var(--text-color-grey);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--bs-gray-100);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 1000;
+}
+
+.loading-overlay.active {
+    display: flex;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-overlay p {
+    color: var(--White-color);
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 16px;
+    border-radius: var(--radius);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+
+    .description-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+}

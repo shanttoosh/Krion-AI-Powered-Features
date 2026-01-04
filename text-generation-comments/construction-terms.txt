@@ -1,0 +1,1026 @@
+The construction industry has many complicated jargons that make it hard for anyone new to grasp these new terms. If you are starting as a construction manager or trying to set up a new project, it would be advisable to understand some of the basic terms used in the industry.
+
+We have compiled a glossary of some of the most common terms you will likely encounter working on your project.
+
+TABLE OF CONTENTS
+
+Most common terms in construction
+Summary
+Most common terms in construction
+Aggregate
+Aggregate refers to coarse or medium-grained particulate material that contains sand, crushed stone, and gravel, or recycled concrete. Aggregates are used in foundations, concrete mixes, railroads, and tarmac roads.
+
+All-in-rate
+This refers to the overall costs necessary to complete a project. It encompasses both direct and indirect costs.
+
+Appraisal
+An appraisal is an opinion given by a cost consultant on the valuation of a property. The purpose is to assess available options before settling on a preferred choice for building.
+
+Apprentice
+An apprentice is someone who has taken up specialty training under the guidance of an experienced craft professional. Skills taught during an apprenticeship will depend on the specialty they are pursuing and the skill level of their educator/mentor.
+
+Architect of Record
+This refers to the person whose license and name are attached to the construction permits used in a particular site. The architect-of-record is not necessarily the project’s designer, but he handles the project’s paperwork.
+
+As-builts
+As-built drawings are the complete records of the drawings representing the actual work completed in a project. They are essential as they are used to track deviations from the original building plans.
+
+AWP (advanced work packaging)
+Advanced work packaging is a process framework for industrial construction projects that facilitates engineering planning to be driven by construction sequencing.
+
+Back Charge
+A back charge arises when one party is indebted to another party in a contract. They are typically billed after the completion of construction works. For instance, if a plumbing subcontractor’s installations end up in leaking pipes, the general contractor can back charge for repair costs.
+
+Backfilling
+This is the process of replacing soil removed during the excavation of foundations or related earthworks. This protects foundations and parts of the substructure from natural elements. The material used in backfills can be the same soil removed from excavation or new rocks or dirt that meet the structural requirements.
+
+Base estimate
+The base estimate is the preliminary cost estimate from the contractor. It contains the contractor’s profits and overheads, design fee estimates, and other project cost estimates. It, however, excludes risk and inflation.
+
+Beam
+Beams are horizontal members that carry perpendicular loads. They can span below slabs or wall openings.
+
+Bearing capacity
+The bearing capacity is the strength of soil to withstand imposed loads on it. The safe bearing capacity is whereby the maximum contact pressure by a structure on the ground should not produce shear failure in the soil.
+
+Best value method
+The best value method is a procurement method used in construction that ensures the client gets the optimum value for money in building. It is also used in prequalifying bidders for a project. It combines cost, quality, and sustainability.
+
+Bid
+Construction bidding is the process of submitting proposals to undertake a project to a client. It starts with cost estimation, and the qualifying firm is chosen from this process.
+
+Bid leveling
+Bid leveling is the process of confirming that bidders within the same bid package are pricing work on an even level with all factors considered. By normalizing all bids on a project, clients can more easily evaluate the bidders. 
+
+Bid-hit ratio
+This is the ratio of successful against unsuccessful bids that a contractor makes.
+
+Bid Package
+A bid package is the set of documents that a contractor sends when requesting proposals. The bid package contains the scope of work, project specifications, drawings, and general conditions.
+
+Bid Selection
+Bid selection is the process whereby the client chooses the best bidder for the project. In most cases, the lowest bidder wins the contract, but private clients consider many factors before awarding a project.
+
+Bid Solicitation 
+Bid solicitation is whereby a client notifies bidders of a project opportunity by sending out invitations for bids or requests for proposals.
+
+BIM (building information modeling)
+This is a process for creating and managing the necessary information in a construction project. BIM solutions are based on cloud platforms, and they integrate data from different disciplines to replicate a digital representation of an asset during its lifecycle.
+
+Blocking
+Blocking is using short pieces of lumber to fill, join, or reinforce a building structure.
+
+Blueprints
+A blueprint is a drawing that encompasses all of the project’s specifications. They are used to determine a project’s feasibility, obtain licenses, and actual construction. Since much of construction documents are digital today, blueprint can be seen as a somewhat outdated term for plans and models. 
+
+BOQ (bill of quantities)
+This is the document prepared by the cost consultant that itemizes materials, equipment, labor, and other associated costs. It provides the specific quantities of the project in drawings and specifications.
+
+Box crib
+Box cribs are temporary wooden structures used in supporting objects during construction. They can be used to secure overturned vehicles and debris from collapsed structures.
+
+Builder’s risk insurance
+This covers any losses incurred during construction. It covers the destruction of a building, theft of materials, destruction by fire, wind, or theft.
+
+Building engineer
+The building engineer is concerned with the planning, operation, design, and construction of a project. They provide advice on cost-effective systems for the building.
+
+Building line
+This line demarcates the edges of a plot of land beyond which construction cannot occur. It is set back at a specified distance from the property line.
+
+CAD (computer-aided design)
+This broad concept primarily refers to using computer software to undertake project design successfully. Project designers create models and digital representations of entire structures using CAD.
+
+Cant
+A cant is an oblique line that slants off or cuts off at a corner.
+
+Cantilever
+A cantilever is a beam supported only on one side but carries load either at the end or along the unsupported span.
+
+Casework
+Casework is the name that refers to manufacturing boxed furniture like racks, drawers, storage spaces, and bookcases.
+
+Catastrophic failure
+When a structure gets to ultimate stress levels, catastrophic failure occurs. This failure is sudden and cascades down a building. Recovery from it is impossible.
+
+Caulking
+Caulking is applying ‘caulk’ around doors and windows. The caulk acts as a sealant and is suitable in areas with no expansion and contraction. The caulk is applied using a caulking gun, and it hardens after drying.
+
+Change Order
+This refers to an amendment in the construction contract that leads to changes in the scope of work. Ambiguities or the owner’s desire to implement changes to the project can bring change orders about in the construction plans.
+
+Civil engineering
+Civil engineering is an engineering discipline that involves the design, construction, and maintenance of environments that humans benefit from on a daily basis. This includes infrastructure in the form of buildings, public works like water and power, and any other built environment. Examples include roads, bridges, tunnels, dams, airports, railroads, power grids, water management, and more.
+
+Clash detection
+Clash detection is the process of identifying construction errors in a virtual space before work is done onsite, which cuts down on costly rework downstream. This allows BIM/VDC leaders and construction teams to catch errors before they’re discovered in the field and become very costly rework. Clash detection is best done automatically with design coordination software to ensure adherence to safety regulations and operational needs in the built environment. 
+
+Closeout
+Construction project closeout is the process of confirming all facets and components of an entire job are properly finished and signed off on before the team begins to disperse. The contractor or project manager needs to be sure that all parts of a project are truly complete and that the last components installed look as good as the first.
+
+CMAR (construction management at risk)
+Construction manager at risk is one of the construction delivery methods whereby a construction manager is bound to deliver the project under a guaranteed maximum price. This price is based on specifications and construction documents plus any other inferred contract terms.
+
+Conceptual estimate
+A conceptual estimate is an estimate prepared using engineering concepts and avoiding the counting of individual pieces. As the name implies, conceptual estimates are generally made in the early phases of a project, before construction drawings are completed.
+
+Concrete Cover
+Concrete cover is the distance between concrete reinforcements and the outer surface of the concrete.
+
+Concrete slab
+A concrete slab is a flat horizontal surface supported by beam or column systems. It is a common structural element in modern buildings that comes in many different finishes.
+
+Construction build out
+Construction build-out is necessary to bring a structure from foundation to completion. After construction build-out, a building is ready for occupancy.
+
+Construction estimate
+A construction estimate is a forecast of costs on elements of a building structure. Construction estimation is the process of forecasting these building costs to assess the feasibility and allocate budgets.
+
+Construction management software
+Construction management software is a project management solution that helps companies solve issues like decision making, task scheduling, budgeting, and communication. It automates a lot of solutions making the construction business easier.
+
+Contract formation
+In construction, contract formation is an agreement between a client and a contractor to undertake a project. One party must propose a contract, and another party accepts. It involves negotiations for the parties to arrive at amicable conclusions.
+
+Cost codes
+Cost codes are defined lists of prices on items used for managing, tracking, reporting, and budgeting the expenses associated with a job.
+
+Cost-plus contract
+A cost-plus contract is a contract in construction where the owner pays the contractor costs for labor and materials and an additional negotiated margin to cover for profits.
+
+Cross bracing
+Cross Bracing refers to diagonal supports that cross in an X-shaped manner to provide additional supports to a structure. It is an excellent way to improve structural stability and performance in a building.
+
+Cut and fill
+Cut and fill in construction is moving earth from a construction site logically. Instead of shipping out the old dirt from excavation, the soil is preserved and used in leveling and grading after construction.
+
+Daily report
+A construction daily report is a document filed daily by a site manager at the end of every working day on a project. It ensures everyone on the project is at par, thus preventing mistakes and miscommunication.
+
+Damp proofing
+Damp proofing is a method of moisture control in construction that is applied to floors, walls, and interiors to prevent water percolation into structures.
+
+Dead Load
+A dead load is a static load in a structure that remains permanent over a structure’s lifetime. It can be due to self-weight, fixed décor, permanent attachments, and accessories.
+
+Design-bid-build
+This is a contracting delivery method where the project owner contracts different parties to undertake the design and construction. Construction only begins after design, and there is no overlap between design and construction. It is the most common project delivery method.
+
+Design-build
+Design-build is a project delivery method where one party enters a contract with the project owner to offer design and construction services.
+
+Diagrid
+A diagrid is a network of metal concrete or wooden framework that diagonally intersect and are used for building construction and roofing.
+
+Drawings
+Construction drawings are pictorial and graphical representations of a structure’s dimensions, components, and details.
+
+Drywall
+A drywall is a wall panel consisting of gypsum sandwiched between two thick papers. It is used in interior wall panels and ceilings for replacing traditional plastering methods.
+
+Elevation
+Elevation is an orthographic projection of the exterior faces of a building. Elevations depict how the finished appearance of a building will appear.
+
+Encasement
+An encasement in construction is the covering used in building components. It includes underground pipes, roofing materials, and any toxic substances in building components.
+
+Falsework
+Falsework means the temporary works done in construction to support the permanent structure till the construction process is complete.
+
+FF&E
+FF&E is a common abbreviation used to denote Furniture, Fixtures, and Equipment. FF&E has no permanent connection to a building’s structure and its utilities.
+
+Fieldwork order
+A fieldwork order is a document from the client to the general contractor or a subcontractor to perform changes in a project outside the initially agreed scope.
+
+Floor plan
+A floor plan is a constructional drawing that depicts a house design or construction project from above.
+
+Footing
+A footing is the part of a building’s foundation that creates an attachment between the soil and the foundation of the building.
+
+Foreman
+The foreman is a critical player in the contractor’s team, and his work is to organize and coordinate the site’s operatives. He oversees the timely completion of tasks and often prepares project reports.
+
+General contractor
+A general contractor is a company or person employed by the client responsible for coordinating and executing large projects. They manage subcontractors, handle budgets and schedules in projects.
+
+Girder
+ A girder is the primary horizontal support in a structure carrying vertical loads and small beams. Most girders are steel I-beams, and they span longer than ordinary beams.
+
+GMP (guaranteed maximum price)
+A guaranteed maximum price is the highest price a client can pay for a project. If the construction price goes beyond the guaranteed maximum price, the client is not contractually obliged to pay the contractor.
+
+HVAC 
+This is an abbreviation referring to Heating, Ventilation, and Air Conditioning systems in a building.
+
+IFB (invitation for bid)
+Invitation for bids is a call from a client to contractors soliciting services for a project’s delivery. It lays project requirements, service requirements, standards, and qualifications.
+
+ILD (integrated labor delivery) 
+Integrated labor delivery is a project delivery framework where labor comes in at the design stage. Subcontractors perform about 80% to 100% of the work.
+
+IPD (integrated project delivery)
+IPD is an approach in construction project planning that integrates business structures, people, and systems. It entails a multi-party contract between the contractor, architect, and client. The stakeholders share the incentives and risks of the project.
+
+Job costing
+Job costing is an accounting method for calculating actual costs in a construction project. It breaks down expenses into small specific tasks and details labor and material costs.
+
+Job walk
+A job walk is a scheduled job site visit for bidders to gather more information so that they can submit a more accurate bid. The data and time is set by an owner for their project’s bidding general contractors (GC) or general contractors setting a time for bidding subcontractors.
+
+Joint
+A joint is a separation between different building elements that allows for independent movement and protects the structure from damage.
+
+Joist
+Joists are horizontal elements running in a parallel series perpendicularly across beams or girders. They provide for load transfer.
+
+Journeyperson
+A journeyperson is a skilled tradesperson who has successfully completed an apprenticeship under a master craftsperson. They are considered competent in their craft and qualified to be paid for the services they provide. However, they are not usually considered skilled enough to hire or train others. Once this person has completed their journeypersonman years, they may become a master and operate independently without the guidance of a master craftsperson.
+
+Lean construction
+Lean construction is a construction methodology that aims at achieving a reliable and predictable workflow model that is continuous. It is goal-oriented and aims at reducing wastage while maximizing value.
+
+Lease-leaseback
+A lease-leaseback is a construction delivery method where an owner leases a site to a developer who develops it and returns it to the owner. The developer might finance the project to completion or receive partial payments over the project’s lifetime.
+
+Lien
+A lien is a claim made either by a contractor or subcontractor over unpaid work on a property that’s been adequately done.
+
+Lift slab construction
+This is a construction method for concrete buildings whereby a floor or a roof slab is cast on a previously existing slab. The new slab is then raised using hydraulic jacks.
+
+Live load
+A live load is a variable load on a structural element, and the value of the load varies with the time and occupancy of the structure.
+
+Low bid procurement
+This is a method for awarding construction contracts in competitive bidding where the lowest bidder wins the contract.
+
+Lump-sum contracts
+This is a construction contract where the contractor bids for a project for a total project price instead of bidding on individual items. This single price is then agreed upon before the commencement of works.
+
+Load-bearing wall
+A load-bearing wall is a structural wall in a building that carries loads from a roof structure to the foundation below. Removal of load-bearing walls can cause a collapse in a structure.
+
+Lookout (architecture)
+A lookout is a wooden joist in a roof rafter that extends as a cantilever to the exterior of a building. It supports the roof and provides for a nailing surface.
+
+MEP (mechanical, electrical, and plumbing)
+MEP is an abbreviation that stands for mechanical, electrical, and plumbing. They are the technical aspects that make a building habitable.
+
+Moling 
+This is a construction method for laying pipes without excavation. A pneumatically driven machine is driven in the pipe’s path to mole through the soil then pipes are laid.
+
+Monocrete construction
+Monocrete construction is a construction method that uses concrete wall panels that are bolted together.
+
+Mortar
+Mortar is a mixture of sand, water, and aggregates that makes an inert cementing material. The mixture then hardens into a stone-like structure and spread over surfaces.
+
+Negotiated procurement
+Negotiated procurement is a procurement approach where the owner and contractor collaborate and negotiate contract terms legally.
+
+NIC (not in contract)
+The term NIC is common in construction documents, and it refers to Not In Contract.
+
+NTE (not-to-exceed)
+ An NTE is a contract type that means Not to Exceed price. In this contract type, a contractor’s expenditure and scope of work are limited to this value.
+
+OCO (owner change order)
+In construction, an owner change order (OCO) is an amendment to the original scope of contractually agreed upon work, initiated by the owner. 
+
+It is common for change orders to cause cost overruns on a project. When an owner requests a change order, it’s assumed that budget and schedule will be refactored by contractors according to the amended project needs.
+
+Particleboard
+ This is an eco-friendly material that is an alternative to plywood or fiberboard. Particleboards use wastes such as sawdust and wood shavings and mix them with resin to form boards.
+
+Pay applications 
+A pay application is a group of documents with completed construction project billing exchanged between a contractor and a client.
+
+Penalty clause
+This is a provision in a contract that specifies the payable monetary sums in the event of a breach of contract. They usually happen when there is a breach in time or project budget.
+
+Performance gap
+This is the difference in the performance value of a structure from the predicted value in the design stage and the actual value in the post-occupancy stage.
+
+Plywood
+Plywood is a material made from thin wood veneers glued together. The wooden sheets are stronger and more stable, providing a rigid sheet that does not warp easily.
+
+PO (purchase order)
+A purchase order is a construction document the buyer and vendor have agreed upon outlining the goods and services necessary to complete a project. It is used to place orders before delivery.
+
+Precast concrete
+Precast concrete refers to concrete that is manufactured away from the construction site. Concrete is produced in a reusable mold, cured in a controlled environment then transported to the site.
+
+Project manager 
+A project manager is responsible for overseeing a project’s success from inception to completion. They lead the planning, execution, budgeting, monitoring, and control of a project.
+
+Public-private-partnership
+This is a legal contract for delivering construction projects or services between a public and a private entity. It is the private entity that usually funds the project.
+
+Punch list
+A punch list is a document created before the final inspection, and project closeout lists incomplete or improperly completed works. It is usually attached to the certificate of substantial completion.
+
+Purlin
+A purlin is a horizontal structure that provides structural support in buildings. They are common in roof trusses and support roof rafters.
+
+PVC (poly vinyl chloride)
+PVC is the most common plastic material that is used in plastic pipes, window frames, flooring, cables, and roofing.
+
+Quantity takeoff 
+A quantity takeoff is a detailed measurement of the materials, equipment, and labor necessary to complete a project. It involves dividing project components into small units that are easy to estimate and measure.
+
+Rafter
+A rafter is a sloped structural piece supporting the roof, and it extends from the ridge of the roof to the wall plate. Rafters are usually laid in a series and provide supports for roof decks and roof coverings.
+
+Reinforced concrete
+Reinforced concrete refers to concrete embedded in which steel absorbs tension and shear stresses in concrete.
+
+RFI (request for information) 
+A request for information is a formally written document from the contractor or designer seeking clarification of specifications, agreements, construction plans, or drawings.
+
+RFP (request for proposal)
+A request for proposal is a public announcement by a client seeking out bids for a project. The construction RFP defines the project, scope, and detailed specifications.
+
+RFQ (request for quote)
+A request for quote is an invitation for bidding of services or activities by an owner or contractor of a project. The request for a quote can be for vendors or subcontractors.
+
+RFT (request for tender)
+A request for tenders is a sealed bid in a structured format that sends out invitations to suppliers to solicit services. A request for tender is broader in scope than a request for proposal, which is more specific.
+
+Rough-in
+This is the stage in construction where the mechanical, electrical, and plumbing lines are brought into the project. During the rough-in, the basic framing of the project is complete, but the final connections of the project are not complete.
+
+Rubblization
+Rubblization is a construction technique that aims at saving concrete transportation costs. It is breaking concrete and reducing it to rubble, then transporting it to a different location and using it as base material.
+
+Schedule of values
+A schedule of values is a list of work items on a project and the related item costs and values. A schedule of values covers the entire contract sum as small work portions.
+
+Scope creep
+Scope creep refers to when project requirements and scope extend and increase gradually over time. Deliverables increase over time. Scope creep is generally a result of disagreements and miscommunication.
+
+Scope of work (SOW)
+This refers to the volume of work that should be performed in a project. It is recorded in a scope document that records project milestones, construction reports, and deliverables. It also has a timeline for the project.
+
+Section drawing
+A section drawing shows the view of a structure or object as if it had been sliced through along an imaginary plane.
+
+Shiplap
+A shiplap is a wooden board used on the exterior sides of sheds, barns, and buildings. They overlap and usually are left unfinished to give a rustic feel.
+
+Shop drawings
+These are drawings prepared by the contractor, subcontractor, or fabricator showing detailed specifications on how a component will be manufactured. It depicts the design intent and is issued to the project manager for compliance review.
+
+Shoring
+This is a temporary support used in construction to reinforce below-ground excavations. It is also used as a temporary support during the repair of buildings.
+
+Skirting
+This is a strip that covers the lowest part of an interior wall. It covers the joint between the wall surface and the floor. It serves decoration purposes and at the same time protects the wall from abrasion and kicks.
+
+Slack time
+Slack time is also known as float, and it refers to the amount of time that can elapse as a project transitions from one task to another. This time is accounted for during scheduling to cater for functions that are at risk of facing delays.
+
+Soil investigation
+This refers to the geotechnical studies conducted to establish soil strength before commencing construction. Soil investigations also guide designers on the type of building they should construct in an area.
+
+Soil stockpile
+This is removing the topsoil before construction and saving it for later use. The stockpile is then used for landscaping and restoration after construction.
+
+Specifications
+Specifications explain the scope of work, craft, materials to be used, and installations in a project. They are contained in a document presented during bidding.
+
+Staking
+Staking is a process by land surveyors to mark out sites where the building of a project will take place. It helps the project move from plans and blueprints to actual construction.
+
+Studs
+Studs are framing elements running along a wall between the floor and ceiling to support the walls.
+
+Subcontract
+Subcontracting refers to bringing outside parties to a project to perform specific tasks which the main contractor has not specialized in or cannot accomplish.
+
+Subcontractor
+A subcontractor refers to anyone providing services or labor in a project and they are hired by the general contractor.
+
+Submittals
+A submittal is a written document from the contractor to the design team requesting approvals on equipment, materials, or completed works. Submittals can be in the form of shop drawings or cut sheets.
+
+Subfloor
+A subfloor is the foundation layer placed just beneath the flooring surface to provide a continuous structural surface. It is made of plywood or cement fiberboard.
+
+Superstructure
+A superstructure is the part of a building that is above ground level. It bears different loads and submits them to the soil through the substructure.
+
+Target value design
+Target value design is a method in construction management that applies target costing to deliver a project within a client’s budgetary constraints.
+
+Tender
+A tender is an offer from a client to undertake a project at an agreed price. Tendering, on the other hand, is whereby an employer invites contractors to submit bids.
+
+Thin-shell structure 
+This is a curved lightweight structure meant to transfer shear, tensile and compressive stresses. They encase structures with continuous surfaces.
+
+Tie (cavity wall)
+A tie in a cavity wall is the component used to join the internal and external walls of a cavity wall, thus allowing them to act as a homogeneous unit. This ensures the stability of a cavity wall.
+
+Time and materials (T&M)
+Time and materials are a form of contract used when a project’s scope has not been predetermined. Contractors are therefore paid based on time and materials used in a project.
+
+Topping out
+Topping out is when the uppermost beam, steel, or beam member is laid in place, signifying that a building has reached its height. It is also referred to as topping off, and a ceremony is sometimes held to celebrate this milestone.
+
+Trusses
+A truss is a structural member made of steel or timber lying in a single plane to form a series of triangles. Trusses are primarily used in roofs, towers, and bridges.
+
+Underpinning
+Underpinning is the process of increasing the depths of existing foundations to transfer loads to stable soils. It is sometimes used to stabilize buildings with shallow foundations when buildings with deep foundations are constructed adjacent to them.
+
+Unit price contracts
+A unit price contract is whereby a construction company divides the work in a project into small portions then uses this to estimate project costs. These contracts are outstanding when the scope of a project is not clear.
+
+VDC (Virtual design and construction)
+Virtual design and construction is a digital technology employed by architects, engineers, and contractors to visualize building plans, designs, and processes. It assists the project team in assessing construction plans from inception to finish.
+
+Veneer
+A veneer is a thin layer of steel or wood that covers the exterior part of a framed wall. It improves resistance to fires, pests, and strong winds.
+
+VIF (verify in field)
+VIF is a common abbreviation on construction documents and specifications, and it means verify in field.
+
+Voided Biaxial Slab
+This is a reinforced concrete slab with voids to reduce the volume of concrete. These slabs are generally prefabricated and are one-way spanning.
+
+Wall Stud
+This is a fundamental wall framing member that supports part of a wall or partition. It is smaller in cross-section compared to a wall.
+
+Warping
+Warping refers to the change in timber’s flatness caused by uneven changes in moisture content on the piece of wood.
+
+Zoning
+Zoning is subdividing land in a municipality where properties exist in different areas of a municipality. Zoning laws also determine the maximum building heights and distance of a building from the road.
+
+Summary
+Understanding these construction terms gives you a deeper meaning of what happens in construction. Since the construction industry is multi-disciplinary, you will also hear these terms used in engineering, cost estimation, and architecture.
+
+Looking for more construction resources? Check out our Resource Center full of plenty of guides, checklists, videos, and more!
+
+Construction projects, no matter the size, rely on effective communication. If you’re new to construction, the industry can seem overwhelming with all the technical jargon. Understanding the basic terms can save you time, money, and a lot of frustration. This comprehensive glossary is designed to enhance your professional vocabulary and ensure your projects run smoothly.
+
+ 
+
+ 
+
+Most common construction terms you must know:
+Addendum
+An addendum is an official document added to the original contract or construction plans, typically when changes or modifications need to be made after the initial agreement. It ensures that any updates, corrections, or additions are formally acknowledged. Addendums help maintain clarity and ensure that all stakeholders are aware of project adjustments. It’s a crucial part of managing dynamic construction projects.
+
+Agile Project Management
+Agile project management emphasizes flexibility, collaboration, and iterative progress, making it ideal for construction projects that face frequent changes. Teams break down large projects into smaller tasks, allowing for quick adjustments based on ongoing feedback. This approach helps enhance communication and ensures timely delivery of project phases. It’s particularly useful when the project scope isn’t fully defined from the start.
+
+All-in-Rate
+An all-in-rate is a comprehensive pricing structure that includes all labor, materials, overhead, and other costs in a single rate. It simplifies budgeting and ensures transparency in project pricing. All-in-rates are often used in contracts to avoid hidden fees and provide a clear understanding of project costs upfront.
+
+Blueprints
+Blueprints are detailed architectural and engineering drawings that serve as the visual roadmap for a construction project. These drawings provide crucial information such as measurements, materials used, and the overall layout. Traditionally printed on blue paper, modern blueprints are often digital. They guide contractors and workers, ensuring the structure is built according to specifications.
+
+Budget at Completion (BAC)
+Budget at Completion (BAC) is the total expected cost of a project when it is completed. It includes all estimated expenses such as labor, materials, and overheads. Tracking BAC helps project managers compare actual spending with the initial budget, ensuring the project remains financially viable.
+
+Building Information Modeling (BIM)
+construction terms
+Building Information Modeling (BIM) is a digital tool that creates a detailed 3D model of a building, incorporating structural, mechanical, and even operational elements. This enhances collaboration among architects, engineers, and contractors. BIM helps visualize a project before construction begins, reducing the chances of errors and enhancing overall project efficiency.
+
+Bid Selection
+Bid selection is the process of evaluating and choosing the best contractor or supplier for a project based on submitted proposals. These bids often include cost estimates, timelines, and experience. A fair and transparent bid selection process is key to ensuring that the best candidate is chosen to complete the project within budget and on schedule.
+
+Bid Solicitation
+Bid solicitation involves inviting contractors or suppliers to submit bids for a particular project. This formal process usually includes specific project details, deadlines, and requirements. By gathering multiple bids, project owners can compare costs, timelines, and expertise to make an informed decision. Bid solicitation helps ensure competitive pricing and better project outcomes.
+
+Bill of Quantities (BOQ)
+A Bill of Quantities (BOQ) is a comprehensive document outlining all materials, labor, and additional costs needed for a construction project. It serves as a blueprint for budgeting and ensures that the contractor and client are on the same page regarding project costs. A thoroughly drafted BOQ aids in reducing disagreements and unforeseen costs.
+
+Bill of Materials (BOM)
+A Bill of Materials (BOM) outlines all the materials needed for a project, including quantities and specifications. It helps in planning the procurement process and ensures that the right materials are available when needed. This document is essential for effective project management, as it minimizes delays caused by material shortages.
+
+Change Order
+A change order is a formal request to alter the original contract or construction plan. This might include changes in scope, materials, or timelines. Change orders must be agreed upon by all parties before they can be implemented. Properly managing change orders is critical to avoiding project delays and keeping costs in check.
+
+Construction Management at Risk (CMAR)
+In Construction Management at Risk (CMAR), a construction manager is hired to oversee the project and ensure it stays within a guaranteed maximum price (GMP). This approach shifts some financial risk to the manager, incentivizing them to control costs and timelines more effectively. CMAR fosters collaboration and ensures accountability throughout the project.
+
+Construction Estimate
+A construction estimate is a detailed prediction of the costs involved in completing a project. It includes materials, labor, equipment, and other related expenses. Accurate estimates are crucial for budgeting and ensuring the project remains financially viable. Different estimation methods are used depending on the project phase.
+
+Construction Drawings
+Construction Drawings
+Construction drawings are detailed blueprints that provide the instructions and specifications needed to build the project. These include architectural, structural, mechanical, and electrical plans. Contractors use construction drawings to ensure the project is built according to the design and complies with local regulations.
+
+Cost-Plus Contract
+In a cost-plus contract, the contractor is reimbursed for all project expenses, plus an additional fee for profit. This contract is ideal for projects where the full scope isn’t initially defined, offering flexibility but requiring close monitoring to prevent cost overruns. It provides transparency in spending but requires detailed record-keeping.
+
+Core and Shell
+Core and shell construction refers to completing only the essential structural elements of a building, like the foundation, exterior walls, and roof. The interior spaces remain unfinished, allowing future tenants to customize the interior to their needs. This method is common in commercial and industrial projects.
+
+Cost Value Reconciliation (CVR)
+Cost Value Reconciliation (CVR) is a financial tool used to compare project costs with the value generated at specific milestones. This helps track profitability and ensure that the project remains financially viable. Regular CVR reviews can highlight potential budget issues early, allowing for timely corrective actions.
+
+Cost Management
+Cost management is the process of planning and controlling a project’s budget from start to finish. This encompasses cost evaluation, budget management, and financial oversight. Proper cost management ensures that the project is completed within the agreed-upon financial limits, avoiding budget overruns and keeping stakeholders informed.
+
+Critical Path Method (CPM)
+The Critical Path Method (CPM) is a scheduling technique used to identify the longest sequence of tasks that must be completed for the project to finish on time. It helps project managers prioritize activities that directly affect the project timeline. By focusing on critical tasks, CPM ensures that deadlines are met efficiently.
+
+Daily Progress Report (DPR)
+Daily Progress Report (DPR)
+A Daily Progress Report (DPR) provides a snapshot of the construction activities and milestones achieved on a given day. It includes details like tasks completed, potential delays, and the resources used. DPRs are essential for keeping stakeholders informed and ensuring the project stays on schedule.
+
+Earned Value Management (EVM)
+Earned Value Management (EVM) is a project management technique used to measure project performance in relation to the budget and timeline. By integrating scope, cost, and schedule, EVM provides a comprehensive view of how a project is progressing. It helps detect variances early, allowing for timely corrective measures.
+
+Floor Plan
+A floor plan is a scaled diagram that shows the arrangement of rooms, doors, windows, and other features from a top-down perspective. It helps contractors and clients visualize the interior layout of a building. Floor plans are essential for construction planning and are often used during the design and approval stages.
+
+General Contractor
+A general contractor oversees the entire construction project, managing subcontractors, suppliers, and schedules. They ensure the project is finished on schedule, within the allocated budget, and meets the necessary quality benchmarks. General contractors typically serve as the main liaison between the project owner and the construction crew.
+
+Gantt Charts
+Gantt Charts
+Gantt charts are visual tools that display project tasks along a timeline, showing when each task starts and ends. They help project managers track progress, identify potential delays, and ensure that tasks are completed on schedule. Gantt charts are widely used in construction to monitor project timelines.
+
+Guaranteed Maximum Price (GMP)
+A Guaranteed Maximum Price (GMP) contract sets a ceiling on the total cost of a construction project. The contractor is responsible for covering any additional expenses that exceed the agreed-upon limit. GMP contracts provide financial security for the client and incentivize contractors to manage costs effectively.
+
+HVAC
+HVAC stands for Heating, Ventilation, and Air Conditioning. These systems regulate temperature, air quality, and ventilation within buildings, ensuring comfort and safety. Proper HVAC design and installation are essential for energy efficiency and meeting building codes in residential and commercial projects.
+
+Inspection
+Inspection is the process of reviewing and evaluating the quality of work on a construction site. It ensures that the construction complies with building codes, safety standards, and project specifications. Regular inspections help maintain high-quality work and prevent costly rework later in the project.
+
+Invitation for Bid (IFB)
+An Invitation for Bid (IFB) is a formal document issued to contractors, inviting them to submit a proposal for a project. It includes the scope of work, specifications, and deadlines. The IFB ensures competitive pricing and helps project owners select the most qualified contractor for the job.
+
+Integrated Project Delivery (IPD)
+Integrated Project Delivery (IPD) is a collaborative approach where the project owner, architect, and contractor work together from the start. This method encourages open communication and reduces conflicts, leading to more efficient project execution. IPD aligns the goals of all stakeholders to ensure a successful outcome.
+
+Jobsite Safety Plan
+A Jobsite Safety Plan is a comprehensive document outlining safety protocols, potential hazards, and emergency procedures for a construction site. It ensures that workers follow best practices to prevent accidents and injuries. A well-implemented safety plan is essential for maintaining a safe working environment.
+
+Lien
+A lien is a legal right granted to a contractor or supplier to claim a property if they have not received payment for services rendered. It ensures that the contractor or supplier can seek compensation by placing a hold on the property until payment is made. Liens protect contractors and provide leverage in payment disputes.
+
+Lean Construction
+Lean construction is an approach that aims to reduce waste and increase value across the duration of the project. It borrows principles from lean manufacturing, such as continuous improvement and efficiency. Lean construction helps reduce costs, improve timelines, and deliver higher-quality outcomes by streamlining processes.
+
+Lump Sum Contract
+A lump sum contract is an agreement where the contractor agrees to complete the project for a fixed price. This type of contract is common when the project scope is clearly defined. It transfers most of the financial risk to the contractor, as they are responsible for covering any cost overruns.
+
+Material Management
+Material management is the process of sourcing, storing, and controlling materials for a construction project. It ensures that the right materials are available when needed, preventing delays and reducing waste. Effective material management is critical to keeping projects on schedule and within budget.
+
+Notice of Completion (NOC)
+A Notice of Completion (NOC) is a legal document that signifies the completion of a construction project. It is issued by the project owner to confirm that all work is finished, and it’s typically required to close out the project and release any remaining payments or liens.
+
+Purchase Order (PO)
+A purchase order (PO) is an official document issued by a buyer to a supplier, specifying the types of materials or services required. It details the quantities, costs, and delivery schedules. In construction, POs are crucial for timely material procurement, helping to avoid project delays and acting as legally binding agreements between the purchasing party and the supplier.
+
+Project Stakeholder
+A project stakeholder is anyone who has a vested interest or involvement in a construction project, which can include clients, contractors, investors, and regulatory bodies. Stakeholders can influence project decisions, and their needs must be balanced for the project to succeed. Effective communication with stakeholders is critical to managing expectations and achieving project goals.
+
+Public-Private Partnership (PPP)
+A Public-Private Partnership (PPP) is a collaboration between a government agency and a private-sector company to complete large infrastructure projects. In these arrangements, the private entity typically provides funding and expertise, while the government offers regulatory support. PPPs are used to fund and deliver public projects that might not be possible through public funding alone.
+
+Project Costs
+Project costs encompass all expenses related to the construction process, such as labor, materials, equipment, and indirect costs including permits and insurance. Keeping a close eye on these costs is vital to keep the budget on course. Effective management and forecasting of these expenses are key to preventing cost overruns and ensuring the project remains profitable.
+
+Quality Control
+Quality control is a system of procedures and inspections used to ensure that construction work meets the required standards and specifications. It includes regular testing of materials, inspections of completed work, and corrective actions if necessary. Maintaining quality control throughout the project helps prevent defects and ensures the final product meets the client’s expectations.
+
+Request for Tender (RFT)
+A Request for Tender (RFT) is a formal document issued to contractors, inviting them to submit bids for a construction project. The RFT outlines the scope, specifications, and conditions for the project, enabling contractors to prepare competitive proposals. It is a key step in the procurement process to ensure fair competition and transparency.
+
+Recce
+A recce, short for reconnaissance, refers to a preliminary survey of a construction site before work begins. The purpose is to assess site conditions, identify potential challenges, and plan logistics. Conducting a recce ensures that the site is suitable for the project and helps avoid unforeseen issues once construction is underway.
+
+
+Request for Proposal (RFP)
+
+A Request for Proposal (RFP) is a comprehensive document that invites contractors or service providers to submit proposals for a specific project. It outlines the project’s goals, schedule, and criteria, enabling contractors to offer detailed plans and pricing. RFPs are typically used when project owners need a thorough proposal and cost breakdown from potential service providers.
+
+
+Request for Information (RFI)
+
+A Request for Information (RFI) is issued by a contractor seeking clarifications about certain project details from the owner or architect. RFIs are essential for clarifying project specifications, avoiding misunderstandings, and ensuring the project progresses as planned. They are instrumental in preventing delays and maintaining the integrity of the project.
+
+
+Request for Quote (RFQ)
+
+A Request for Quote (RFQ) is utilized to solicit cost estimates from suppliers or contractors for specific goods or services required in a project. The RFQ typically includes details about the project needs and required quantities, allowing bidders to submit their quotes. Comparing RFQs helps project managers select suppliers based on cost and availability.
+
+
+Subcontractor
+
+A subcontractor is a specialized entity or individual hired by the main contractor to perform distinct parts of the work, such as electrical installations, plumbing, or HVAC systems. Subcontractors provide expertise in their specific fields and are crucial for completing various segments of the project under the main contractor’s oversight.
+
+
+Scope of Work (SOW)
+
+The Scope of Work (SOW) is a critical document that outlines the detailed tasks, expected deliverables, and timelines for a project. It serves to clearly define the responsibilities and expectations from the contractor and other involved entities, ensuring everyone understands their roles and the project’s requirements.
+
+
+Schematic Design (SD)
+
+Schematic design represents the initial stage of the design process, where preliminary drawings and layout concepts are developed to shape the project’s direction. This stage focuses on the overall concept, including building massing, floor plans, and spatial relationships. Schematic designs are typically presented to the client for feedback before moving into more detailed design stages.
+
+
+Schedule of Rates (SOR)
+
+A Schedule of Rates (SOR) provides a predetermined list of prices for specified tasks, materials, or labor, facilitating quick cost calculations for additional or altered work during a project. The SOR is commonly included in long-term contracts to provide consistent pricing for standard services or tasks throughout the project’s duration.
+
+
+Site Plan
+
+A site plan is a detailed layout of the entire construction site, including building locations, access points, utilities, and landscaping. It helps the construction team understand how the project fits into the surrounding environment. A site plan is often required for permits and approvals before construction can begin.
+
+
+Stakeholder
+
+A stakeholder in a construction project is anyone with an interest or investment in the outcome of the project. This can include the project owner, contractors, local authorities, and even the public. Stakeholders can influence project decisions, so managing their expectations and interests is a key part of successful project management.
+
+
+Time and Material Contract
+
+A time and material contract compensates contractors based on the actual time spent and materials used on a project. This type of contract is suitable for projects where the scope is not well-defined from the start, offering flexibility but requiring meticulous monitoring to manage expenses effectively.
+
+
+Turnkey Project
+
+A turnkey project is where the contractor delivers a fully operational facility to the client who needs only to ‘turn the key’ to start operations. This comprehensive approach is favored in large-scale projects where the contractor oversees all phases from design through completion.
+
+
+Unit Price Contract
+
+In a unit price contract, the contractor receives payment according to the quantity of work units completed, instead of a predetermined total price. This contract type is often used in projects where the full scope is not known at the start. It allows for flexibility but requires accurate measurement of completed units.
+
+
+Value Engineering
+
+Value engineering involves scrutinizing a project’s design to identify more cost-efficient methods to achieve similar or enhanced outcomes. The goal is to maximize value while minimizing costs without sacrificing quality. Value engineering often involves redesigning or substituting materials and methods to improve efficiency.
+
+
+VIF (Verify in Field)
+
+VIF stands for “Verify in Field,” meaning that specific dimensions or details must be checked on-site during the construction process. It’s used to ensure accuracy when actual conditions on the construction site might differ from those on the plans. Field verification is crucial in averting expensive mistakes.
+
+
+Working Drawings
+
+Working drawings are the detailed architectural or engineering plans that guide the construction team during the building process. They include specific measurements, materials, and instructions on how to execute each phase of the project. Working drawings ensure that the construction matches the design and meets all required specifications.
+
+
+Work Order
+
+A work order is a document that authorizes the completion of a specific task or set of tasks on a construction project. It provides details such as the nature of the work, timeline, and materials needed. Work orders are critical for tracking progress and ensuring accountability on construction sites.
+
+
+Work Breakdown Structure (WBS)
+
+A Work Breakdown Structure (WBS) is a project management tool that breaks down a large project into smaller, manageable tasks or phases. It helps project managers organize tasks, assign resources, and track progress. The WBS ensures that all aspects of the project are accounted for and executed efficiently.
+
+
+Zoning
+
+Zoning refers to regulations set by local governments that dictate how land can be used in specific areas. These laws separate residential, commercial, and industrial areas to ensure organized and sustainable urban development. Zoning impacts construction projects by determining what types of buildings can be constructed in a particular area.
+
+
+ Construction Terminology Cheat Sheet
+Planning
+Assignable Square Footage (ASF)
+Usable square footage within a physical space (measured from finished wall to finished wall).
+Addendum (Addenda)
+Written information adding to, clarifying or modifying the bidding documents. An addendum is generally issued by the owner to the
+contractor during the bidding process and as such, addenda are intended to become part of the contract documents when the
+construction contract is executed.
+Feasibility Study
+A study based on a Project Program to determine a project budget, schedule and requirements for starting a Capital Improvement
+Project. The feasibility study usually includes a conceptual design, site investigation such as geotechnical and utility infrastructure, cost
+estimating including construction costs, project management fees, financing requirements and investigation into any issue that will have
+an effect on the outcome of the project. A report is provided to describe if the project is feasible and what will be required to move
+forward with the project.
+Group I Equipment
+Building Elements that are considered “part of the building”. These items are typically built into the structure of the building and are
+not movable. ie: wall mounted items, lighting, cabinetry, a/v equipment, etc.
+Group II Furniture/Equipment
+Furniture/Equipment are movable and can be relocated from one space to another with ease. ie: tables, chairs, desks, office furniture,
+classroom equipment, lab equipment, etc. Also known as FF&E (Furniture, Fixtures and Equipment).
+Gross Square Footage (GSF)
+Square footage that includes all unusable space within a building, ie: corridors, custodian closets, inside walls, utility spaces, etc.
+Major & Minor Capital Improvement Project
+A Major Capital Improvement Project is any project using Campus or CSU financing over $632,000. All projects under $632,000 are
+considered Minor Capital Improvement Projects.
+Performance Specifications
+Performance Specifications contain the minimum acceptable standards and results to be achieved rather than dictating methods. This
+includes specifying a minimum acceptable quality standard (above normal code requirements) and aesthetic values. Using performance
+specifications in lieu of material specifications allow the design/build team the greatest flexibility in meeting the project goals.
+Project Program and Programming
+A Project Program is all the physical requirements of a Capital Improvement Project. This includes all occupancy and use requirements
+as well as infrastructure requirements to meet the user’s needs. The Project Program is not a design, but the basis for the design.
+Programming is the process of creating the Project Program and usually involves a series of meetings with all the potential stakeholders
+to determine the requirements for the project.
+Design
+CSI Master Format
+The CSI Master Format is a system of numbers and titles for organizing construction information into a regular, standard order or
+sequence. By establishing a master list of titles and numbers Master Format promotes standardization and thereby facilitates the
+retrieval of information and improves construction communication. It provides a uniform system for organizing information in project
+manuals, for organizing project cost data, and for filing product information and other technical data
+Construction Documents (CD Phase)
+Detailed plans indicating how to construct the physical spaces of a building – or All drawings, specifications and addenda associated
+with a specific construction project.
+Constructability Review
+Review of plans and specifications either by a contractor or third party reviewer to ensure accuracy and proper detail of the
+construction plans.
+CSI Master Format
+The CSI Master Format is a system of numbers and titles for organizing construction information into a regular, standard order or
+sequence. By establishing a master list of titles and numbers Master Format promotes standardization and thereby facilitates the
+retrieval of information and improves construction communication. It provides a uniform system for organizing information in project
+manuals, for organizing project cost data, and for filing product information and other technical data
+Leadership in Energy and Environmental Design (LEED)
+Sustainable design through use of materials, construction practices, efficient building design, etc.
+Preliminary Design (PD Phase)
+Further developed plans showing physical spaces and attributes such as doors, windows, walls, etc.
+Schematic Design (SD Phase)
+Conceptual plan showing locations of program space at scaled size.
+Specifications
+A detailed, exact statement of particulars, especially statements prescribing materials and methods; and quality of work for a specific
+project. The most common arrangement for specifications substantially parallels the CSI (Construction Specification Institute) format. (see
+CSI)
+Construction
+Alternate Bid
+Amount stated in the bid to be added or deducted from the base bid amount proposed for alternate materials and/or methods of
+construction.
+Architects Supplemental Information (ASI)
+An ASI is a form used by an architect to specify additional instructions and interpretations relating to a set of architectural plans. An ASI
+is also issued to order minor changes in the architectural work to be accomplished, changes that may vary from the original plans.
+As-Built Drawings (also known as Record Drawings)
+Contract drawings marked up to reflect changes made during the construction process. It is good practice to make As-Built drawings
+by marking the changes on reproducible drawings such as sepias for duplication purposes later
+Bidding Documents
+The published advertisement or written invitation to bid , instructions to bidders, the bid form and the proposed contract documents
+including any acknowledged addenda issued prior to receipt of bids.
+Building Envelope (Sometimes referred to as Building Shell)
+1. The waterproof elements of a building which enclose conditioned spaces through which thermal energy may be transferred to or
+from the exterior.
+2. The outer structure of the building. (See Tenant and Leasehold improvements for building interiors)
+Building Manager
+The person responsible for monitoring the buildings to which they are assigned
+Campus Master Plan
+The document that comprises the policies, guidelines and development standards for the campus
+Capital Construction Project
+Any project in which the total budget exceeds $632K
+Change Order
+A written document between the owner and the contractor signed by the owner and the contractor authorizing a change in the work or
+an adjustment in the contract sum or the contract time. A change order may be signed by the architect or engineer, provided they have
+written authority from the owner for such procedure and that a copy of such written authority is furnished to the contractor upon request.
+The contract sum and the contract time may be changed only by change order. A change order may be in the form of additional
+compensation or time; or less compensation or time known as a Deduction (from the contract) the amount deducted from the contract sum
+by change order.
+Construction Manager at Risk (CM@R)
+Delivery method in which the Architect and Contractor hold separate contracts with the owner (CSU) but work as a collaborative team
+during design.
+Critical Path
+The set of activities that must be completed on time for the project completion date to be met. Activities on the critical path have no
+slack time.
+Date of Substantial Completion
+The date certified by the architect when the work or a designated portion thereof is sufficiently complete, in accordance with the
+contract documents, so the owner may occupy the work or designated portion thereof for the use for which it is intended.
+Deferred Maintenance
+Maintenance projects not included in the maintenance process nor in the capital repair process due to a lack of funding
+Division of the State Architect (DSA)
+The state architect and subordinates typically form an organizational unit named the Division of the State Architect. This entity oversees
+the design and/or construction of public building within the state.
+Estimate
+An approximation of the expected cost to complete the work/project as outlined in the scope of work
+Facilities Services
+The organization that is responsible for overseeing the planning, development, operation, and maintenance of university buildings,
+structures an grounds
+General Conditions
+A written portion of the contract documents set forth by the owner stipulating the contractor’s minimum acceptable performance
+requirements including the rights, responsibilities and relationships of the parties involved in the performance of the contract. General
+conditions are usually included in the book of specifications but are sometimes found in the architectural drawings.
+Guaranteed Maximum Price (GMP)
+The agreed upon maximum price between the Contractor and Owner to build a project per the drawings and specifications developed.
+Hazardous Waste
+A waste substance that may cause severe illness, death, or may cause a substantial hazard to health or the environment when
+improperly managed
+JOC
+Job Ordering Contracting (JOC) is a way for organizations to get numerous, commonly encountered construction projects done quickly
+and easily through multi-year contracts. JOC reduces unnecessary levels of engineering, design, and contract procurement time along
+with construction project procurement costs by awarding long-term contracts for a wide variety of renovation, repair and construction
+projects.
+Minor Construction Project
+Minor Capital Outlay (construction) projects are limited to those projects that correct deficiencies, provide new or improved facilities,
+add access or provide equipment for a minor capital outlay project whose estimated total cost is $632,000 or less. Minor construction
+does not include any work classified as maintenance or repair. Projects may not be grouped unless they are for similar work within one
+building or complex.
+Move Budget Estimate
+As opposed to a Small Project Approval Form (SPAF), a Move Budget Estimate is for any small furniture reconfiguration, new furniture
+order and/or furniture or box move. The move budget estimate can also include small electrical and cable work, patching/painting and
+carpeting of an office or small area.
+Notice of Completion (NOC)
+Written notice issued by the owner of a project (or his or her agent) to notify concerned parties that all work on the project has been
+completed. This notice also sets the period within which concerned parties may exercise their lien rights against one another.
+Plan Check
+A process in which your building plans are reviewed to make sure they comply with basic safety, engineering and planning rules.
+Project Architect
+The person, firm or corporation appointed by the Owner to provide a design, contract documents, and contract administration of
+construction work
+Project Manager
+The person that coordinates and facilitates the project and project sponsors’ goals in accordance with the Project Review Team’s
+recommendations and requirements
+Project Review Team
+A group of representatives involved in the project coordination effect, that cooperatively reviews and develops the scope of work as it
+relates to the planning, development, long-term operation, and maintenance of campus buildings and structures.
+Punch List
+A list of deficiencies, incomplete, or unacceptable work items compiled by the project manager during the final inspection of a project
+Renovation
+Total or partial upgrading of a facility to higher standards of quality or efficiency. Under certain conditions a renovation may also be
+classified as an improvement.
+Request for Information (R.F.I.)
+A written request from a contractor to the owner or architect for clarification or information about the contract documents following
+contract award.
+Request for Proposal (RFP)
+A request for proposal (RFP) is a solicitation made, often through a bidding process, by an agency or company interested in
+procurement of a commodity, service or valuable asset, to potential suppliers to submit business proposals.
+Rough Order of Magnitude (ROM)
+Estimate of costs and time when requirements aren’t specified in early stages of project
+Schedule of Values
+A statement furnished by the contractor to the architect or engineer reflecting the portions of the contract sum allotted for the various
+parts of the work and used as the basis for reviewing the contractor's applications for progress payments.
+Scope Changes
+A change to the written and agreed upon scope of work requested by the customer resulting from unanticipated occurrences during the
+project. Scope changes may or may not involve a change in project cost or time on a change order.
+Scope of Work
+A written statement or list of tasks, reached through consultation with department personnel and defines the actual work to be done. It is
+presented to the department either on a drawing or as a separate document.
+Small Project Approval Form (SPAF)
+A set of documents used by PDC to confirm funding for a small project from the initiating department and their VP/Provost.
+State Fire Marshal (SFM)
+The Office of the State Fire Marshal supports the mission of the CAL FIRE by focusing on fire prevention. The Office of the State Fire
+Marshal provides support through a wide variety of fire safety responsibilities including: regulating buildings in which people live,
+congregate, or are confined; by controlling substances and products which may, in and of themselves, or by their misuse, cause injuries,
+death and destruction by fire; by providing statewide direction for fire prevention within wildland areas; by regulation hazardous
+liquid pipelines; by developing and reviewing regulations and building standards; and by providing training and education in fire
+protection methods and responsibilities.
+Strategic Plan
+A plan that projects programs five to ten years for most business functions. Some strategic facility management plans project three to
+five years.
+Time and Materials (T&M)
+A written agreement between the owner and the contractor wherein payment is based on the contractor's actual cost for labor,
+equipment, materials, and services plus a fixed add-on amount to cover the contractor’s overhead and profit.
+Value Engineering
+Evaluation of construction methods and/or materials to determine which have the net result of reducing costs, consistent with specified
+performance, reliability, maintainability, aesthetic, safety, and security criteria.
+Computer Programs
+ArcMap
+ArcMap is the main component of ESRI's ArcGIS suite of geospatial processing programs, and is used primarily to view, edit, create,
+and analyze geospatial data. ArcMap allows the user to explore data within a data set, symbolize features accordingly, and create
+maps.
+AutoCAD
+AutoCAD is a commercial software application for 2D and 3D computer-aided design (CAD) and drafting, available since 1982 as a
+desktop application and since 2010 as a mobile web- and cloud-based app marketed as AutoCAD 360.
+Building Information Modeling (BIM)
+A process involving the generation and management of digital representations of physical and functional characteristics of places
+DWG
+DWG (from drawing) is a binary file format used for storing two- and three- dimensional design data and metadata. It is the native
+format for several CAD packages including DraftSight, AutoCAD, IntelliCAD (and its variants) and Caddie. In addition, DWG is
+supported non-natively by many other CAD applications.
+ESRI
+Environmental Systems Research Institute (aka ESRI) is an international supplier of Geographic Information System (GIS) software, web
+GIS and geodatabase management applications. The company is headquartered in Redlands, California.
+Geographic Information System (GIS)
+A computer system designed to capture, store, manipulate, analyze, manage, and present all types of geographical data.
+Global Positioning System (GPS)
+The Global Positioning System (GPS) is a space-based satellite navigation system that provides location and time information in all
+weather conditions, anywhere on or near the Earth where there is an unobstructed line of sight to four or more GPS satellites. The system
+provides critical capabilities to military, civil and commercial users around the world. It is maintained by the United States government
+and is freely accessible to anyone with a GPS receiver.
+MEP
+Mechanical, electrical and plumbing (MEP) drawings are part of the standard drawings within the construction set of blueprints.
+Redlines
+A red-line drawing is essentially an intermediate drawing that shows corrections or changes to a previous drawing. The term red line
+literally comes from the (typically) red pen used to amend the drawings by hand. These changes mark-ups show changes made to the
+drawing subject matter during the manufacture or construction of the product
+Revit
+Autodesk Revit is Building information modeling (BIM) software for architects, structural engineers, MEP engineers, designers and
+contractors. It allows users to design a building and structure and its components in 3D, annotate the model with 2D drafting elements
+and access building information from the building models database. Revit is 4D BIM capable with tools to plan and track various stages
+in the building's lifecycle, from concept to construction and later demolition.
+Budget and Accounting Terms
+Allocation
+The distribution of funds from one account to one or more accounts or appropriations.
+Bond
+A method of financing capital projects through long-term borrowing.
+Budget Transfer
+The movement of budget dollars from one financial unit to another.
+Cash Flow
+The pattern of income and expenditures, as of a company or person, and the resulting availability of cash.
+Chargeback
+An expenditure made for or on behalf of another governmental unit, fund, or department, or for a private individual, firm, or
+corporation which will subsequently be recovered in cash or its equivalent.
+Chartfield String
+A unique financial code used to identify where funds are to be deposited or removed, it should consist of
+Department/Fund/Account/Program/Class/Project/Chargeback Code
+Claim Schedule
+A schedule of invoices prepared and submitted by a state department to the Controller for payment to the named claimants.
+Expenditure Transfer
+An after-the-fact reallocation of an expense.
+General Fund
+The state fund into which non-dedicated revenues are deposited and from which the majority of state expenditures are made.
+Project Cost
+Funds spent on completing a project. Project cost includes construction costs.
+Purchase Order (PO)
+Request required when purchasing materials, equipment or supplies from a vendor.
+Purchase Order Amendment (POA)
+Form required when the final invoice amount differs from the Purchase Order (PO) amount
+Revenue Bond
+A bond payable from a specific source of revenue and to which the full faith and credit of an issuer with taxing power is not pledged.
+Pledged revenues may be derived from operation of the financed project, grants and excise or other specified taxes. Generally, no
+voter approval is required prior to issuance.
+CSUSM Campus Acronyms
+AA - Academic Affairs http://www.csusm.edu/aa/
+AAFSA - African American Faculty & Staff Association http://www.csusm.edu/aafsa/
+AALC - Academic Affairs Leadership Council http://www.csusm.edu/aa/committees_councils/aalc.html
+ACD - Academic Hall http://www.csusm.edu/pdc/Projects_Completed/AcademicHall_Complete.html
+APC - Academic Policy Committee http://community.csusm.edu/course/view.php?id=380
+ARF - Application Rating Form www.csusm.edu/uarsc/documents/hr/applicationratingform.doc
+ASI -Associated Students, Inc. http://www.csusm.edu/asi/
+AVP- Associate Vice President
+BFS- Business and Financial Services http://www.csusm.edu/fab/
+BLP- Budget and Long Range Planning Committee http://community.csusm.edu/course/view.php?id=381
+BOT- Board of Trustees
+CAMP - College Academic Master Plan
+http://www.csusm.edu/policies/active/documents/university_academic_master_planning_process.html
+CCF- Center for Children & Families http://www.csusm.edu/ccf/
+CE- Community Engagement http://www.csusm.edu/community/
+CFA- California Faculty Association http://www.calfac.org/csu-san-marcos
+CHABSS- College of Humanities, Arts, Behavioral & Social Sciences http://www.csusm.edu/chabss/
+CMS- Common Management System http://www.csusm.edu/cms/
+CO-Chancellor's Office http://www.csusm.edu/accessibility/policies/ChancellorPolicies/
+CoBA- College of Business Administration http://www.csusm.edu/coba/
+CoEHHS- College of Education, Health and Human Services http://www.csusm.edu/cehhs/
+CoSM- College of Science & Math http://www.csusm.edu/csm/index.html
+CSUEU- California State University Employees Union http://www.csusm.edu/csm/index.html
+DSS- Disabled Student Services http://www.csusm.edu/dss/
+EAP- Employee Assistance Program http://www.csusm.edu/hr/benefits/employeeassistanceprogram.html
+EC- Executive Council http://www.csusm.edu/president/organization/executive-council.html
+ECS- Events and Conference Services http://www.csusm.edu/events/
+EMS- Enrollment Management Services http://www.csusm.edu/studentaffairs/organization/index.html
+EO-Executive Order http://www.csusm.edu/rms/rm/csueo.html
+EOC- Emergency Operations Center http://www.csusm.edu/rms/rm/csueo.html
+ESP- Employee Status Pages http://www.csusm.edu/iits/support/tsadmin/esp.html
+FAS- Finance and Administrative Services http://www.csusm.edu/fas/index.html
+FASLC- Finance and Administrative Services Leadership Council http://www.csusm.edu/fas/expectations/faslc.html
+FDM- Facilities Development and Management http://www.csusm.edu/fdm/
+FTE- Full Time Equivalent http://www.csusm.edu/pdc/campus-master-plan/SUAM9045-9050.pdf
+HSI- Hispanic Serving Institutions http://www.csusm.edu/hsi/index.html
+HRPS- Human Resources and Payroll Services http://www.csusm.edu/hrps/
+IITS -Instructional and Information Technology Services http://www.csusm.edu/iits/
+LAFS- Latino Association of Faculty & Staff http://www.csusm.edu/lafs/
+LATAC- Library & Academic Technology Committee http://community.csusm.edu/course/view.php?id=63
+LGBTA- Lesbian, Gay, Bisexual, Transgender, Ally http://www.csusm.edu/orgs/lgbta.html
+MOU-Memorandum of Understanding
+http://www.csusm.edu/fa/ttfacultyresources/ttdocumentfiles/MOU%20for%20Joint%20Appointment.pdf
+MPP- Management Personnel Plan http://www.csusm.edu/policies/active/documents/management_personnel_plan_mpp.html
+PAN- Personnel Action Notice www.csusm.edu/hr/docs/panguidelines.doc
+PCBO- Partners in Campus Business Operations http://www.csusm.edu/fab/pcbo/index.html
+PO- Purchase Order http://www.csusm.edu/uarsc/documents/procedures/purchasing.html
+Ql- Quality Improvement http://www.csusm.edu/qi/
+SA- Student Affairs http://www.csusm.edu/studentaffairs/
+SAND- Staff Appreciation and Development Committee http://www.csusm.edu/sand/index.html
+SCO- State Controller's Office http://www.sco.ca.gov/
+SDSU- San Diego State University http://www.sdsu.edu/
+SETC- Service Employee Trades Council-United http://www.setc-united.org/
+SLL- Student Life and Leadership http://www.csusm.edu/sll/index.html
+SOAR- Student Outreach and Referral http://www.csusm.edu/soar/index.html
+SUPA- Statewide University Police Association http://supapolice.org/
+UA -University Advancement http://www.csusm.edu/advancement/
+UAPD- Union of American Physicians and Dentists http://www.uapd.com/
+UARSC- University Auxiliary and Research Services Corporation http://www.csusm.edu/uarsc/
+UAW- United Auto Workers Union http://uaw.org/
+UBC-University Budget Committee http://www.csusm.edu/aa/committees_councils/ubc.html
+UVA- University Village Apartments http://www.uvasanmarcos.com/index.php/prop/home
+WASC-Western Association of Schools and Colleges http://www.acswasc.org/
+WACUBO- Western Association of College & University Business Officers http://www.wacubo.org/
+Capital Planning, Design and Construction (CPCD)
+CSU Facilities and Planning Forms
+http://www.calstate.edu/cpdc/Facilities_Planning/forms.shtml
+CPDC- Capital Planning, Design and Construction http://www.calstate.edu/cpdc
+CPDC 1-1 (Document) Five Year Improvement Program
+CPDC 1-4 (Document) Project Description
+CPDC 1-4 (Document) Outyear Concept Project Description-Outyear
+CPDC 2-3 Calculation of Space Requirements for Instructional Projects, State Funded
+CPDC 2-4 Summary of Space Requirements for a Building, State Funded
+CPDC 2-7 (Excel) Capital Outlay Estimate, State and Non-State Funded 2014-2015
+CPDC 2-7.5 (Excel) Summary of Cost Components, State Funded
+CPDC 2-8 (Document) Energy and Utilities Planning Checklist (included on 2-7)
+
+

@@ -1,0 +1,432 @@
+/* Main App Styles */
+:root {
+    --primary-color: #e8c11f;
+    --primary-btn: #333;
+    --secondary-color: #222221;
+    --text-color: #333;
+    --border-color: #ddd;
+    --success-color: #2fb380;
+    --danger-color: #da292e;
+    --warning-color: #f4bd61;
+    --blue-official: #197aad;
+    --bg-overlay: rgba(0, 0, 0, 0.6);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Dashboard Background Simulation */
+.dashboard-bg {
+    display: flex;
+    height: 100%;
+    filter: blur(2px);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.sidebar-placeholder {
+    width: 260px;
+    background: #222;
+    height: 100%;
+}
+
+.content-placeholder {
+    flex: 1;
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+.header-placeholder {
+    height: 60px;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.grid-placeholder {
+    height: 400px;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Matching the Krion Modal Style */
+.modal-container {
+    background: white;
+    width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fcfcfc;
+    border-radius: 8px 8px 0 0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #444;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #888;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.select-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+select {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    background: white;
+}
+
+.tone-badge {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    background: #eee;
+    color: #666;
+    transition: all 0.3s;
+}
+
+/* AI Input Section */
+/* AI Input Section - Krion Style */
+.ai-input-wrapper {
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: white;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-input-wrapper:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(232, 193, 31, 0.15);
+    /* Soft yellow glow */
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    border: none;
+    outline: none;
+    padding: 16px;
+    padding-bottom: 40px;
+    /* Space for tools */
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: none;
+    color: var(--text-color);
+    box-sizing: border-box;
+    border-radius: 6px 6px 0 0;
+}
+
+/* Floating Tools Bar inside Textarea */
+.ai-tools {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    left: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+    pointer-events: none;
+    /* Let clicks pass through area */
+}
+
+.action-buttons {
+    pointer-events: auto;
+    /* Re-enable clicks on buttons */
+}
+
+.btn-icon-only {
+    background: white;
+    border: 1px solid #eee;
+    color: #666;
+    font-size: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.btn-icon-only:hover {
+    color: #333;
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(232, 193, 31, 0.3);
+}
+
+.typing-status {
+    font-size: 11px;
+    font-weight: 500;
+    color: #888;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 6px;
+    border-radius: 4px;
+    pointer-events: auto;
+}
+
+/* Suggestions Popup - improved elevation */
+.suggestions-popup {
+    border: none;
+    box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.15), 0 4px 12px -2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 12px;
+    overflow: hidden;
+    animation: slideUpFade 0.25s ease-out;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.suggestions-header {
+    background: #fcfcfc;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 16px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: -0.01em;
+}
+
+.btn-close-sm {
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #999;
+}
+
+.suggestion-item {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background: #fcfcfc;
+}
+
+.suggestion-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.suggestion-style {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.style-formal {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.style-concise {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.style-friendly {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.suggestion-text {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Images Section */
+.images-container {
+    display: flex;
+    gap: 12px;
+}
+
+.image-upload-box {
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    cursor: pointer;
+    border: 1px dashed #ccc;
+}
+
+.image-preview {
+    display: flex;
+    gap: 8px;
+}
+
+.image-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ddd;
+}
+
+/* Footer */
+.modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    background: #fcfcfc;
+    border-radius: 0 0 8px 8px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-secondary {
+    background: white;
+    border: 1px solid #ddd;
+    color: #666;
+}
+
+.btn-secondary:hover {
+    background: #f5f5f5;
+}
+
+.btn-primary {
+    background: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background: #333;
+}
+
+.spinner-sm {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ddd;
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "review": {
+        "base_template": "The {priority} priority review '{name}' is scheduled from {start_date} to {due_date}, following the {workflow} workflow.",
+        "cost_template": "Estimated cost: {estimated_cost}, Actual cost: {actual_cost}.",
+        "parent_template": "This review is part of '{parent_review}'.",
+        "checklist_template": "Checklist items: {checklist}."
+    },
+    "rfa": {
+        "base_template": "Request for approval '{name}' has been initiated with a request date of {request_date} and due date of {due_date}. This {priority} priority request follows the {workflow} workflow and requires attention within the specified timeline.",
+        "checklist_template": "Checklist items: {checklist}."
+    },
+    "issue": {
+        "base_template": "The issue '{name}' concerns a {issue_type} at the {placement} in {location}. The root cause is {root_cause}. This issue is scheduled from {start_date} to {due_date}.",
+        "cost_template": "Estimated cost: {estimated_cost}, Actual cost: {actual_cost}.",
+        "workflow_template": "Following the {workflow} workflow."
+    }
+}

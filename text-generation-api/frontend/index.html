@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krion Consulting - Text Generation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">K</span>
+                    <span class="logo-text">Krion Consulting</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active" data-section="review">
+                    <span class="nav-icon">📋</span>
+                    <span>Review</span>
+                </li>
+                <li class="nav-item" data-section="rfa">
+                    <span class="nav-icon">📝</span>
+                    <span>RFA</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1 id="page-title">Create Review</h1>
+                <div class="header-actions">
+                    <span class="status-badge">Draft</span>
+                </div>
+            </header>
+
+            <!-- Review Form -->
+            <section id="review-section" class="form-section active">
+                <div class="form-container">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="review-name">Name <span class="required">*</span></label>
+                            <input type="text" id="review-name" placeholder="Enter review name" value="Phase 1 Inspection">
+                        </div>
+                        <div class="form-group">
+                            <label for="review-priority">Priority <span class="required">*</span></label>
+                            <select id="review-priority">
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High" selected>High</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-start-date">Start Date <span class="required">*</span></label>
+                            <input type="date" id="review-start-date" value="2026-01-05">
+                        </div>
+                        <div class="form-group">
+                            <label for="review-due-date">Due Date <span class="required">*</span></label>
+                            <input type="date" id="review-due-date" value="2026-01-15">
+                        </div>
+                        <div class="form-group">
+                            <label for="review-workflow">Workflow <span class="required">*</span></label>
+                            <select id="review-workflow">
+                                <option value="Approval Workflow" selected>Approval Workflow</option>
+                                <option value="Engineering Approval">Engineering Approval</option>
+                                <option value="Quality Assurance">Quality Assurance</option>
+                                <option value="Safety Workflow">Safety Workflow</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-parent">Parent Review</label>
+                            <input type="text" id="review-parent" placeholder="Optional">
+                        </div>
+                        <div class="form-group">
+                            <label for="review-estimated-cost">Estimated Cost</label>
+                            <input type="number" id="review-estimated-cost" placeholder="Optional" value="50000">
+                        </div>
+                        <div class="form-group">
+                            <label for="review-actual-cost">Actual Cost</label>
+                            <input type="number" id="review-actual-cost" placeholder="Optional" value="45000">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="review-checklist">Checklist Items</label>
+                            <input type="text" id="review-checklist" placeholder="Comma separated (e.g., Safety Check, Quality Review)" value="Safety Check, Quality Review">
+                        </div>
+                    </div>
+
+                    <!-- Description Section -->
+                    <div class="description-section">
+                        <div class="description-header">
+                            <label>Description</label>
+                            <div class="generation-controls">
+                                <select id="review-generation-mode">
+                                    <option value="ai">🤖 AI Generated</option>
+                                    <option value="template">📋 Template</option>
+                                </select>
+                                <button class="btn btn-generate" onclick="generateDescription('review')">
+                                    <span class="btn-icon">✨</span>
+                                    Generate Description
+                                </button>
+                            </div>
+                        </div>
+                        <textarea id="review-description" placeholder="Click 'Generate Description' to auto-generate or type manually..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-secondary">Cancel</button>
+                        <button class="btn btn-primary">Save Review</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RFA Form -->
+            <section id="rfa-section" class="form-section">
+                <div class="form-container">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="rfa-name">Name <span class="required">*</span></label>
+                            <input type="text" id="rfa-name" placeholder="Enter RFA name" value="Safety Compliance Check">
+                        </div>
+                        <div class="form-group">
+                            <label for="rfa-priority">Priority <span class="required">*</span></label>
+                            <select id="rfa-priority">
+                                <option value="Low">Low</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="High">High</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="rfa-request-date">Request Date <span class="required">*</span></label>
+                            <input type="date" id="rfa-request-date" value="2026-01-10">
+                        </div>
+                        <div class="form-group">
+                            <label for="rfa-due-date">Due Date <span class="required">*</span></label>
+                            <input type="date" id="rfa-due-date" value="2026-01-20">
+                        </div>
+                        <div class="form-group">
+                            <label for="rfa-workflow">Workflow <span class="required">*</span></label>
+                            <select id="rfa-workflow">
+                                <option value="Review Process" selected>Review Process</option>
+                                <option value="Material Approval">Material Approval</option>
+                                <option value="Design Change">Design Change</option>
+                                <option value="Procurement Approval">Procurement Approval</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="rfa-checklist">Checklist Items</label>
+                            <input type="text" id="rfa-checklist" placeholder="Comma separated (e.g., Document Review, Sign-off)" value="Document Review, Sign-off">
+                        </div>
+                    </div>
+
+                    <!-- Description Section -->
+                    <div class="description-section">
+                        <div class="description-header">
+                            <label>Description</label>
+                            <div class="generation-controls">
+                                <select id="rfa-generation-mode">
+                                    <option value="ai">🤖 AI Generated</option>
+                                    <option value="template">📋 Template</option>
+                                </select>
+                                <button class="btn btn-generate" onclick="generateDescription('rfa')">
+                                    <span class="btn-icon">✨</span>
+                                    Generate Description
+                                </button>
+                            </div>
+                        </div>
+                        <textarea id="rfa-description" placeholder="Click 'Generate Description' to auto-generate or type manually..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-secondary">Cancel</button>
+                        <button class="btn btn-primary">Save RFA</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Generating description...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

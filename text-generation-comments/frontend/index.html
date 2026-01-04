@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krion 6D - Submit Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Background Overlay (to mimic modal open state on a dashboard) -->
+    <div class="dashboard-bg">
+        <!-- Sidebar Placeholder -->
+        <div class="sidebar-placeholder"></div>
+        <!-- Main Content Placeholder -->
+        <div class="content-placeholder">
+            <div class="header-placeholder"></div>
+            <div class="grid-placeholder"></div>
+        </div>
+    </div>
+
+    <!-- Submit Review Modal -->
+    <div class="modal-overlay active">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Submit Review</h2>
+                <button class="btn-close"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="modal-body">
+
+                <!-- Status Selection -->
+                <div class="form-group">
+                    <label>Status</label>
+                    <div class="select-wrapper">
+                        <select id="review-status">
+                            <option value="submit" selected>Submit</option>
+                            <option value="reject">Reject</option>
+                            <option value="revise">Revise</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Comments Section with AI Magic -->
+                <div class="form-group">
+                    <label>Comments</label>
+                    <div class="ai-input-wrapper">
+                        <textarea id="review-comment"
+                            placeholder="Type your comment here (e.g., 'rebar spacing wrong')..."></textarea>
+
+                        <!-- AI Tools -->
+                        <div class="ai-tools">
+                            <span id="typing-status" class="typing-status"></span>
+                            <div class="action-buttons">
+                                <button class="btn-icon-only" onclick="triggerRephrase()" title="Improve / Rephrase">
+                                    <i class="fas fa-wand-magic-sparkles"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Suggestions Popup (Hidden by default) -->
+                        <div id="ai-suggestions" class="suggestions-popup">
+                            <div class="suggestions-header">
+                                <span>AI Suggestions</span>
+                                <button class="btn-close-sm" onclick="closeSuggestions()">&times;</button>
+                            </div>
+                            <div id="suggestions-list" class="suggestions-list">
+                                <!-- Suggestions will be injected here -->
+                                <div class="loading-item">
+                                    <div class="spinner-sm"></div> Generating professional options...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary">Cancel</button>
+                <button class="btn btn-primary" onclick="submitForm()">
+                    <i class="fas fa-check"></i> Accept
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
