@@ -52,7 +52,7 @@ class AIGenerator:
             try:
                 import google.generativeai as genai
                 genai.configure(api_key=settings.gemini_api_key)
-                model_name = "gemini-2.0-flash"
+                model_name = "models/gemini-pro-latest"
                 self.gemini_model = genai.GenerativeModel(model_name)
                 print(f"✅ Gemini client initialized with model: {model_name}")
             except Exception as e:
