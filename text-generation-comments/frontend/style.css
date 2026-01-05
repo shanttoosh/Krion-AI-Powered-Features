@@ -250,12 +250,18 @@ textarea {
 
 /* Suggestions Popup - improved elevation */
 .suggestions-popup {
+    display: none;
+    /* Hidden by default */
     border: none;
     box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.15), 0 4px 12px -2px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-top: 12px;
     overflow: hidden;
     animation: slideUpFade 0.25s ease-out;
+}
+
+.suggestions-popup.active {
+    display: block;
 }
 
 @keyframes slideUpFade {

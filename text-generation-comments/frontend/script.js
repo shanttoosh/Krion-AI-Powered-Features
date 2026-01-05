@@ -78,17 +78,23 @@ function renderSuggestions(suggestions) {
     `).join('');
 }
 
-function applySuggestion(text) {
+window.applySuggestion = function (text) {
+    console.log("Applying suggestion:", text); // Debug
     commentInput.value = text;
     closeSuggestions();
-    typingStatus.textContent = "AI suggestion applied ✨";
+
+    // Update typing status
+    if (typingStatus) {
+        typingStatus.textContent = "AI suggestion applied ✨";
+        setTimeout(() => { typingStatus.textContent = ""; }, 3000);
+    }
 
     // Highlight effect
     commentInput.style.backgroundColor = "#fffde7";
     setTimeout(() => {
         commentInput.style.backgroundColor = "white";
     }, 500);
-}
+};
 
 function showSuggestions() {
     suggestionsPopup.classList.add('active');
