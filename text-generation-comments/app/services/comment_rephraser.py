@@ -2,6 +2,8 @@
 Comment rephraser service.
 Provides Quillbot-style text expansion and rephrasing for review comments.
 """
+from app.comments_db.models import CommentRequestDB, CommentSuggestionDB
+from app.comments_db.session import AsyncSessionLocal
 from typing import List, Tuple
 import asyncio
 from app.config import settings
@@ -217,6 +219,28 @@ Rules:
             
             # Parse suggestions from response
             suggestions = self._parse_suggestions(raw_response)
+
+            async with AsyncSessionLocal() as db:
+               request_row = CommentRequestDB(
+                    input_text=request.input,
+                    status=request.status.value,
+                    input_type=input_type
+                )
+            db.add(request_row)
+            await db.flush()
+
+            for s in suggestions:
+                db.add(
+                    CommentSuggestionDB(
+                        request_id=request_row.id,
+                        text=s.text,
+                        style=s.style,
+                        confidence=s.confidence,
+                        provider=settings.ai_provider
+                    )
+                )          
+
+            await db.commit()
             
             # Build corrections info
             corrections = CorrectionsInfo(

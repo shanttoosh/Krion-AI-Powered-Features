@@ -12,6 +12,6 @@
     "issue": {
         "base_template": "The issue '{name}' concerns a {issue_type} at the {placement} in {location}. The root cause is {root_cause}. This issue is scheduled from {start_date} to {due_date}.",
         "cost_template": "Estimated cost: {estimated_cost}, Actual cost: {actual_cost}.",
-        "workflow_template": "Following the {workflow} workflow."
+        "workflow_template": "Following the {workflow} ."
     }
 }

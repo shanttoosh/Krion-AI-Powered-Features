@@ -1,33 +1,30 @@
 """
 FastAPI application entry point for Comment Rephrasing Service.
 """
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import rephrase
-from app.config import settings
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
-# Create FastAPI app
+# -------------------------------------------------
+# CREATE APP FIRST (NO ROUTER IMPORTS YET)
+# -------------------------------------------------
 app = FastAPI(
     title="Comment Rephrasing Service",
     description="""
     Microservice for expanding and rephrasing short comments into professional construction-domain sentences.
-    
-    ## Features
-    - **Tone-based Generation**: Adapts to Submit/Reject/Revise status
-    - **Construction Knowledge**: Expands terms like 'BIM', 'RFI', 'NCR'
-    - **Multi-style Output**: Formal, concise, and friendly alternatives
-    - **Spelling & Grammar**: Auto-correction during rephrasing
     """,
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc"
 )
 
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
-import os
+print("🚀 FastAPI app created")
 
-# Configure CORS
+# -------------------------------------------------
+# MIDDLEWARE
+# -------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -36,21 +33,34 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
-app.include_router(rephrase.router)
+print("🧩 Middleware loaded")
 
-# Mount frontend directory
+# -------------------------------------------------
+# ROUTERS (IMPORT AFTER APP + MIDDLEWARE)
+# -------------------------------------------------
+from app.routers.rephrase import router as rephrase_router
+from app.routers.feedback import router as feedback_router
+
+app.include_router(rephrase_router)
+app.include_router(feedback_router)
+
+print("✅ Routers registered")
+
+# -------------------------------------------------
+# STATIC FILES
+# -------------------------------------------------
 frontend_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
 app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
+# -------------------------------------------------
+# ROUTES
+# -------------------------------------------------
 @app.get("/")
 async def read_root():
-    """Serve the frontend application."""
     return FileResponse(os.path.join(frontend_path, "index.html"))
 
 @app.get("/api-info")
 async def api_info():
-    """API Information endpoint (moved from root)."""
     return {
         "service": "Comment Rephrasing Service",
         "version": "1.0.0",
@@ -58,7 +68,9 @@ async def api_info():
         "health": "/api/v1/rephrase-health"
     }
 
-
+# -------------------------------------------------
+# ENTRY POINT
+# -------------------------------------------------
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8002, reload=True)
+    uvicorn.run(app, host="127.0.0.1", port=8002)
