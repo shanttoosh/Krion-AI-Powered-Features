@@ -7,6 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
+
+
 # -------------------------------------------------
 # CREATE APP FIRST (NO ROUTER IMPORTS YET)
 # -------------------------------------------------
@@ -40,7 +42,9 @@ print("🧩 Middleware loaded")
 # -------------------------------------------------
 from app.routers.rephrase import router as rephrase_router
 from app.routers.feedback import router as feedback_router
+from app.routers import review_comments
 
+app.include_router(review_comments.router)
 app.include_router(rephrase_router)
 app.include_router(feedback_router)
 

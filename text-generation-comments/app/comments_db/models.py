@@ -61,3 +61,25 @@ class CommentFeedbackDB(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
     suggestion = relationship("CommentSuggestionDB", back_populates="feedback")
+
+
+class ReviewCommentDB(Base):
+    __tablename__ = "review_comments"
+
+    id = Column(Integer, primary_key=True)
+    review_id = Column(Integer, nullable=False)
+    workflow_step = Column(Integer, nullable=False)
+
+    user_name = Column(String, nullable=False)
+    status = Column(String, nullable=False)  # submit / revise / reject
+    text = Column(String, nullable=False)
+
+    parent_id = Column(Integer, ForeignKey("review_comments.id"), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    parent = relationship(
+        "ReviewCommentDB",
+        remote_side=[id],
+        backref="replies"
+    )
+

@@ -41,4 +41,12 @@ print("\n📌 comment_feedback rows:")
 cursor.execute("SELECT * FROM comment_feedback")
 print(cursor.fetchall())
 
+# -------------------------
+# ✅ REVIEW FEEDCOMMENTS (ADD HERE)
+# -------------------------
+
+print("\n📌 review_comments rows:")
+cursor.execute("SELECT * FROM review_comments")
+print(cursor.fetchall())
+
 conn.close()
