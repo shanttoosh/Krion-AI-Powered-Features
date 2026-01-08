@@ -1,10 +1,36 @@
 """
 FastAPI application entry point for Text Generation API.
 """
+import logging
+import sys
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import generation
 from app.config import settings
+
+# Configure structured logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='{"time": "%(asctime)s", "level": "%(levelname)s", "logger": "%(name)s", "message": "%(message)s", "extra": %(extra)s}',
+    datefmt="%Y-%m-%dT%H:%M:%S",
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+
+# Custom filter to ensure 'extra' field exists
+class ExtraFilter(logging.Filter):
+    def filter(self, record):
+        if not hasattr(record, 'extra'):
+            record.extra = '{}'
+        else:
+            import json
+            record.extra = json.dumps(getattr(record, 'extra', {}))
+        return True
+
+for handler in logging.root.handlers:
+    handler.addFilter(ExtraFilter())
+
+logger = logging.getLogger(__name__)
+logger.info("Text Generation API starting up")
 
 # Create FastAPI app
 app = FastAPI(

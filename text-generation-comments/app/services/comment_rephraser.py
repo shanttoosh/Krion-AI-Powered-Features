@@ -96,7 +96,8 @@ class CommentRephraser:
         status: ReviewStatus, 
         expanded_text: str,
         context: dict = None,
-        glossary_terms: str = ""
+        glossary_terms: str = "",
+        thread_history: list = None  # NEW: Previous comments in thread
     ) -> str:
         """Build the AI prompt for comment rephrasing."""
         
@@ -112,6 +113,17 @@ class CommentRephraser:
                 context_str += f"Review Step: {context['step_name']}\n"
             if context.get("entity_type"):
                 context_str += f"Document Type: {context['entity_type']}\n"
+        
+        # NEW: Build thread history context for replies
+        thread_context = ""
+        if thread_history and len(thread_history) > 0:
+            thread_context = "\n--- CONVERSATION THREAD (for context) ---\n"
+            for i, comment in enumerate(thread_history, 1):
+                user = comment.get("user_name", "Unknown")
+                status_val = comment.get("status", "").upper()
+                text = comment.get("text", "")
+                thread_context += f"{i}. [{status_val}] {user}: \"{text}\"\n"
+            thread_context += "--- END THREAD ---\n\nYou are writing a REPLY to the above conversation.\n"
         
         # Status-specific instructions
         status_instructions = {
@@ -133,9 +145,9 @@ class CommentRephraser:
         
         prompt = f"""You are a professional comment writer for Krion 6D, a construction project management system.
 
-TASK: Expand and rephrase the following short comment into {3} professional alternatives.
-
-USER INPUT: "{input_text}"
+TASK: Write a professional REPLY to the conversation below, based on the USER INPUT.
+{thread_context}
+USER INPUT (Draft): "{input_text}"
 EXPANDED TERMS: "{expanded_text}"
 STATUS: {status.value.upper()}
 ISSUE CATEGORY: {issue_category}
@@ -143,22 +155,25 @@ ISSUE CATEGORY: {issue_category}
 {f"RELEVANT GLOSSARY TERMS:{chr(10)}{glossary_terms}" if glossary_terms else ""}
 
 CRITICAL DOMAIN RULES:
-1. STRICTLY CONSTRUCTION DOMAIN ONLY. Do not hallucinate proper nouns.
-2. CORRECT TYPOS AGGRESSIVELY using the Glossary and Expand abbreviations context.
+1. STRICTLY CONSTRUCTION DOMAIN ONLY.
+2. The USER INPUT is the core message you must rephrase. The THREAD is just for context.
+3. If USER INPUT is "noted" or "ok", use the context to say WHAT is noted (e.g. "Noted, the column width will be fixed.")
+4. CORRECT TYPOS AGGRESSIVELY using the Glossary.
    - 'iim', 'im' -> BIM (Building Information Model)
    - 'colum', 'clm', 'col' -> Column
-   - 'imges', 'img' -> Images
-   - 'conc', 'concreat' -> Concrete
    - 'rebar' -> Reinforcement Bar
-3. Interpreting messy inputs:
+5. Interpreting messy inputs:
    - "iim colum bad" -> "The BIM column model is incorrect."
    - "rfa rnf wrong" -> "Request for Approval for reinforcement details contains errors."
+   - (Reply) "ok done" -> "The requested changes have been implemented."
+{f"6. Reference specific details from the thread (like dimensions or grid lines) if the user agrees to them." if thread_history else ""}
 
 FEW-SHOT EXAMPLES:
 Input: "wall paint bd" -> Output: "The wall paint finish is unsatisfactory."
 Input: "iim colum wrong" -> Output: "The BIM column model contains errors."
 Input: "site cleared ok" -> Output: "Site clearance has been verified and is acceptable."
 Input: "rfa for rnf" -> Output: "Request for Approval regarding reinforcement details."
+{f'Input (reply): "noted will fix" -> Output: "Acknowledged. The corrections will be made as per the feedback and resubmitted."' if thread_history else ""}
 
 TONE REQUIREMENTS:
 - The content must reflect the STATUS ({status.value.upper()}) but providing 3 distinct phrasing styles.
@@ -205,13 +220,14 @@ Rules:
             # Get relevant glossary terms
             glossary_matches = find_relevant_glossary_terms(request.input)
             
-            # Build prompt
+            # Build prompt with thread history for context-aware replies
             prompt = self._build_prompt(
                 request.input, 
                 request.status, 
                 expanded_text,
                 context,
-                glossary_matches
+                glossary_matches,
+                request.thread_history  # Pass thread history for context
             )
             
             # Generate suggestions using AI
@@ -325,42 +341,66 @@ Rules:
         return response.text.strip()
     
     def _parse_suggestions(self, raw_response: str) -> List[CommentSuggestion]:
-        """Parse the AI response into structured suggestions."""
+        """Parse the AI response into structured suggestions using regex."""
+        import re
         suggestions = []
         
-        lines = raw_response.strip().split('\n')
+        # Regex to find style tags like [FORMAL], [FRIENDLY], etc.
+        # Captures the tag and the text following it until the next tag or end of string
+        pattern = r'(\[(?:FORMAL|CONCISE|FRIENDLY)\])(.*?)(?=\[(?:FORMAL|CONCISE|FRIENDLY)\]|$)'
+        
+        # Find all matches (dotall flag to allow dot to match newlines)
+        matches = re.finditer(pattern, raw_response, re.DOTALL | re.IGNORECASE)
         
         style_map = {
-            "[FORMAL]": ("formal", 0.95),
-            "[CONCISE]": ("concise", 0.90),
-            "[FRIENDLY]": ("friendly", 0.85),
+            "FORMAL": ("formal", 0.95),
+            "CONCISE": ("concise", 0.90),
+            "FRIENDLY": ("friendly", 0.85),
         }
         
-        for line in lines:
-            line = line.strip()
-            if not line:
-                continue
+        for match in matches:
+            tag = match.group(1)
+            text = match.group(2).strip()
             
-            for label, (style, confidence) in style_map.items():
-                if line.upper().startswith(label):
-                    text = line[len(label):].strip()
-                    # Clean up any remaining formatting
-                    text = text.strip('*').strip()
-                    if text:
-                        suggestions.append(CommentSuggestion(
-                            text=text,
-                            style=style,
-                            confidence=confidence
-                        ))
-                    break
+            # Clean up tag brackets to get key
+            key = tag.strip("[]").upper()
+            
+            if key in style_map and text:
+                style, confidence = style_map[key]
+                # Clean up any leading/trailing quotes or hyphens
+                text = text.lstrip(" -:\"").rstrip(" \"")
+                
+                suggestions.append(CommentSuggestion(
+                    text=text,
+                    style=style,
+                    confidence=confidence
+                ))
         
-        # If parsing failed, treat entire response as one suggestion
-        if not suggestions and raw_response.strip():
-            suggestions.append(CommentSuggestion(
-                text=raw_response.strip(),
-                style="formal",
-                confidence=0.8
-            ))
+        # Fallback: if regex failed (e.g. no tags found), try line splitting
+        if not suggestions:
+            lines = raw_response.strip().split('\n')
+            for line in lines:
+                line = line.strip()
+                if not line: continue
+                
+                # Check if it starts with a tag manually
+                found_tag = False
+                for tag in style_map:
+                    if line.upper().startswith(f"[{tag}]"):
+                        text = line[len(tag)+2:].strip()
+                        style, conf = style_map[tag]
+                        suggestions.append(CommentSuggestion(text=text, style=style, confidence=conf))
+                        found_tag = True
+                        break
+                
+                if not found_tag:
+                    # Treat valid text lines as suggestions if no tags found
+                    if len(line) > 10: 
+                        suggestions.append(CommentSuggestion(
+                            text=line, 
+                            style="formal", 
+                            confidence=0.8
+                        ))
         
         return suggestions[:3]  # Return max 3 suggestions
 

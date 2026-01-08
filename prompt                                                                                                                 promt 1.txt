@@ -1,0 +1,267 @@
+For every review there is workflow upto 7 steps workflow , where reviewers will be assigned 3-4 etc for example each reviewer has to check and update the status if there is any conflict between them they can comment and update the status to revise and reject or submit So they can add comment based on other comment just like append comment the ai must know what user what comment they do and how to rephraseNow with current implementation what should I do for this in current project directory itself what and all needed what files how to integrate in ui backend logic apo design db design and all 
+Guide me with detailed workflow and implementation note every path defined must be correct and neat project directory how should we implement step by step only process i need 
+ok now provide impemnetation code for this as in steps defined
+
+
+import sys
+import os
+
+# 🔴 FIX PYTHON PATH FIRST (THIS MUST BE AT TOP)
+PROJECT_ROOT = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..")
+)
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+# ✅ NOW imports will work
+from app.comments_db.base import Base
+from app.comments_db.session import sync_engine
+
+# 🚨 CRITICAL: import models so SQLAlchemy registers tables
+import app.comments_db.models
+
+
+def create_tables():
+    print("📌 Tables BEFORE:", Base.metadata.tables.keys())
+    Base.metadata.create_all(bind=sync_engine)
+    print("✅ Tables AFTER:", Base.metadata.tables.keys())
+
+
+if __name__ == "__main__":
+    create_tables()
+from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Boolean
+from sqlalchemy.orm import relationship
+from datetime import datetime
+
+from app.comments_db.base import Base
+
+
+class CommentRequestDB(Base):
+    __tablename__ = "comment_requests"
+
+    id = Column(Integer, primary_key=True)
+    input_text = Column(String, nullable=False)
+    status = Column(String, nullable=False)
+    input_type = Column(String, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    suggestions = relationship(
+        "CommentSuggestionDB",
+        back_populates="request",
+        cascade="all, delete-orphan"
+    )
+
+
+class CommentSuggestionDB(Base):
+    __tablename__ = "comment_suggestions"
+
+    id = Column(Integer, primary_key=True)
+    request_id = Column(Integer, ForeignKey("comment_requests.id"), nullable=False)
+
+    text = Column(String, nullable=False)
+    style = Column(String, nullable=False)
+    confidence = Column(Float)
+    provider = Column(String)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    # Existing relationship
+    request = relationship("CommentRequestDB", back_populates="suggestions")
+
+    # ✅ NEW — feedback relationship
+    feedback = relationship(
+        "CommentFeedbackDB",
+        back_populates="suggestion",
+        cascade="all, delete-orphan"
+    )
+
+from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Boolean
+from sqlalchemy.orm import relationship
+from datetime import datetime
+from app.comments_db.base import Base
+
+
+class CommentFeedbackDB(Base):
+    __tablename__ = "comment_feedback"
+
+    id = Column(Integer, primary_key=True)
+    suggestion_id = Column(Integer, ForeignKey("comment_suggestions.id"), nullable=False)
+
+    is_helpful = Column(Boolean, nullable=True)   # 👍 / 👎
+    comment = Column(String, nullable=True)       # ✅ ADD THIS
+
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    suggestion = relationship("CommentSuggestionDB", back_populates="feedback")
+
+
+class ReviewCommentDB(Base):
+    __tablename__ = "review_comments"
+
+    id = Column(Integer, primary_key=True)
+    review_id = Column(Integer, nullable=False)
+    workflow_step = Column(Integer, nullable=False)
+
+    user_name = Column(String, nullable=False)
+    status = Column(String, nullable=False)  # submit / revise / reject
+    text = Column(String, nullable=False)
+
+    parent_id = Column(Integer, ForeignKey("review_comments.id"), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    parent = relationship("ReviewCommentDB", remote_side=[id], backref="replies")
+i only get this ouput  
+
+    (.venv) PS C:\Users\Krion\Desktop\Text Generation\review_rfa_comments_feature\Krion-AI-Powered-Features\text-generation-comments> python app/comments_db/tables.py 
+📌 Tables BEFORE: dict_keys(['comment_requests', 'comment_suggestions', 'comment_feedback'])
+✅ Tables AFTER: dict_keys(['comment_requests', 'comment_suggestions', 'comment_feedback'])
+
+ok done next 
+"""
+FastAPI application entry point for Comment Rephrasing Service.
+"""
+import os
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from app.routers import review_comments
+app.include_router(review_comments.router)
+
+
+# -------------------------------------------------
+# CREATE APP FIRST (NO ROUTER IMPORTS YET)
+# -------------------------------------------------
+app = FastAPI(
+    title="Comment Rephrasing Service",
+    description="""
+    Microservice for expanding and rephrasing short comments into professional construction-domain sentences.
+    """,
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc"
+)
+
+print("🚀 FastAPI app created")
+
+# -------------------------------------------------
+# MIDDLEWARE
+# -------------------------------------------------
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+print("🧩 Middleware loaded")
+
+# -------------------------------------------------
+# ROUTERS (IMPORT AFTER APP + MIDDLEWARE)
+# -------------------------------------------------
+from app.routers.rephrase import router as rephrase_router
+from app.routers.feedback import router as feedback_router
+
+app.include_router(rephrase_router)
+app.include_router(feedback_router)
+
+print("✅ Routers registered")
+
+# -------------------------------------------------
+# STATIC FILES
+# -------------------------------------------------
+frontend_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
+app.mount("/static", StaticFiles(directory=frontend_path), name="static")
+
+# -------------------------------------------------
+# ROUTES
+# -------------------------------------------------
+@app.get("/")
+async def read_root():
+    return FileResponse(os.path.join(frontend_path, "index.html"))
+
+@app.get("/api-info")
+async def api_info():
+    return {
+        "service": "Comment Rephrasing Service",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "health": "/api/v1/rephrase-health"
+    }
+
+# -------------------------------------------------
+# ENTRY POINT
+# -------------------------------------------------
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8002)
+
+this is my main py i haealreay add all required and creted file correctly s u said but when i oprn swagger there s no end poit of reviewcomment
+
+
+(.venv) PS C:\Users\Krion\Desktop\Text Generation\review_rfa_comments_feature\Krion-AI-Powered-Features\text-generation-comments> python check_db.py
+📁 Current working directory: C:\Users\Krion\Desktop\Text Generation\review_rfa_comments_feature\Krion-AI-Powered-Features\text-generation-comments
+📄 DB file exists: True
+
+📌 Tables:
+[('comment_requests',), ('comment_suggestions',), ('comment_feedback',), ('review_comments',)]
+
+📌 comment_requests rows:
+[]
+
+📌 comment_suggestions rows:
+[]
+
+📌 comment_feedback rowsstill db is not having that table No parameters
+
+Request body
+
+application/json
+Edit Value
+Schema
+{
+  "review_id": 101,
+  "workflow_step": 3,
+  "user_name": "Junior Engineer",
+  "status": "revise",
+  "text": "Noted. Will update the BIM column as recommended and resubmit.",
+  "parent_id": 1
+}
+
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'POST' \
+  'http://127.0.0.1:8002/api/v1/review-comments/add' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "review_id": 101,
+  "workflow_step": 3,
+  "user_name": "Junior Engineer",
+  "status": "revise",
+  "text": "Noted. Will update the BIM column as recommended and resubmit.",
+  "parent_id": 1
+}
+'
+Request URL
+http://127.0.0.1:8002/api/v1/review-comments/add
+Server response
+Code	Details
+200	
+Response body
+Download
+{
+  "success": true
+}
+Response headers
+ access-control-allow-credentials: true 
+ access-control-allow-origin: * 
+ content-length: 16 
+ content-type: application/json 
+ date: Wed,07 Jan 2026 10:52:30 GMT 
+ server: uvicorn 
+OK DONE NEXT STEP ?
+EXPLAIN STEP BY STEP WITH PROJECT DIRECTORY AND CREATION AND CODE 

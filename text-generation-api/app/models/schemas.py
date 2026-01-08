@@ -62,14 +62,16 @@ class IssueFields(BaseModel):
     actual_cost: Optional[float] = Field(None, description="Actual cost")
 
 
+from typing import Union
+
 class GenerationRequest(BaseModel):
-    """Request model for description generation."""
+    """Request model for description generation with strict field validation."""
     entity_type: EntityType = Field(..., description="Type of entity")
     generation_mode: GenerationMode = Field(
         default=GenerationMode.TEMPLATE,
         description="Generation method: template or ai"
     )
-    fields: Dict[str, Any] = Field(..., description="Entity fields for generation")
+    fields: Union[ReviewFields, RFAFields, IssueFields] = Field(..., description="Entity-specific fields")
     
     class Config:
         json_schema_extra = {
@@ -90,6 +92,16 @@ class GenerationRequest(BaseModel):
         }
 
 
+class GenerationMetadata(BaseModel):
+    """Metadata about the generation process."""
+    mode_requested: str = Field(..., description="Generation mode requested by user")
+    mode_used: str = Field(..., description="Actual mode used (may differ if fallback occurred)")
+    fallback_used: bool = Field(default=False, description="Whether fallback to template was triggered")
+    fallback_reason: Optional[str] = Field(None, description="Reason for fallback if applicable")
+    provider: Optional[str] = Field(None, description="AI provider used (groq, openai, gemini)")
+    latency_ms: float = Field(..., description="Generation latency in milliseconds")
+
+
 class GenerationResponse(BaseModel):
     """Response model for description generation."""
     success: bool = Field(..., description="Whether generation was successful")
@@ -97,6 +109,7 @@ class GenerationResponse(BaseModel):
     generation_mode: str = Field(..., description="Mode used for generation")
     editable: bool = Field(default=True, description="Whether user can edit the description")
     error: Optional[str] = Field(None, description="Error message if generation failed")
+    metadata: Optional[GenerationMetadata] = Field(None, description="Generation metadata for debugging")
     
     class Config:
         json_schema_extra = {
@@ -104,6 +117,15 @@ class GenerationResponse(BaseModel):
                 "success": True,
                 "generated_description": "The High priority review 'Phase 1 Inspection' is scheduled from Jan 5, 2026 to Jan 15, 2026, following the Approval Workflow.",
                 "generation_mode": "template",
-                "editable": True
+                "editable": True,
+                "metadata": {
+                    "mode_requested": "ai",
+                    "mode_used": "template",
+                    "fallback_used": True,
+                    "fallback_reason": "AI timeout after 10s",
+                    "provider": "groq",
+                    "latency_ms": 10250.5
+                }
             }
         }
+

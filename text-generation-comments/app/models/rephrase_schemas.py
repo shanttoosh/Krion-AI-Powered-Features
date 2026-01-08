@@ -44,16 +44,25 @@ class CommentRephraseRequest(BaseModel):
         le=5,
         description="Number of alternative suggestions to generate (1-5)"
     )
+    # NEW: Thread history for context-aware rephrasing
+    thread_history: Optional[List[Dict]] = Field(
+        None,
+        description="Previous comments in thread for context-aware AI rephrasing"
+    )
+    parent_comment_id: Optional[int] = Field(
+        None,
+        description="ID of parent comment if replying to a thread"
+    )
     
     class Config:
         json_schema_extra = {
             "example": {
-                "input": "rebar spacing wrong",
-                "status": "reject",
-                "context": {
-                    "workflow_name": "Two Step Approval",
-                    "step_name": "Structural Review"
-                },
+                "input": "noted will fix",
+                "status": "revise",
+                "thread_history": [
+                    {"user_name": "Senior Engineer", "status": "reject", "text": "BIM column model contains errors. Please correct the dimensions."}
+                ],
+                "parent_comment_id": 1,
                 "num_suggestions": 3
             }
         }

@@ -83,35 +83,62 @@ Generate only the description text, nothing else."""
         
         return prompt
     
-    async def generate(self, entity_type: str, fields: Dict[str, Any]) -> str:
+    
+    async def generate_with_metadata(self, entity_type: str, fields: Dict[str, Any]) -> tuple:
         """
-        Generate description using AI.
-        Falls back to template if AI fails.
+        Generate description using AI with metadata.
+        Returns: (description, metadata_dict)
         """
         # Lazy initialization
         self._initialize_clients()
+        
+        metadata = {
+            "fallback_used": False,
+            "fallback_reason": None,
+            "provider": None
+        }
         
         try:
             prompt = self._build_prompt(entity_type, fields)
             
             if settings.ai_provider == "openai" and self.openai_client:
                 print("🚀 Using OpenAI...")
-                return await self._generate_openai(prompt)
+                description = await self._generate_openai(prompt)
+                metadata["provider"] = "openai"
+                return description, metadata
+                
             elif settings.ai_provider == "groq" and self.groq_client:
                 print("🚀 Using Groq...")
-                return await self._generate_groq(prompt)
+                description = await self._generate_groq(prompt)
+                metadata["provider"] = "groq"
+                return description, metadata
+                
             elif settings.ai_provider == "gemini" and self.gemini_model:
                 print("🚀 Using Gemini...")
-                return await self._generate_gemini(prompt)
+                description = await self._generate_gemini(prompt)
+                metadata["provider"] = "gemini"
+                return description, metadata
             else:
-                # No AI configured, use template
+                # No AI configured
                 print("⚠️ AI not configured, falling back to template")
-                return template_generator.generate(entity_type, fields)
+                metadata["fallback_used"] = True
+                metadata["fallback_reason"] = "AI provider not configured"
+                return template_generator.generate(entity_type, fields), metadata
         
         except Exception as e:
-            # AI failed, fallback to template
+            # AI failed
             print(f"⚠️ AI failed: {e}. Falling back to template.")
-            return template_generator.generate(entity_type, fields)
+            metadata["fallback_used"] = True
+            metadata["fallback_reason"] = str(e)
+            return template_generator.generate(entity_type, fields), metadata
+    
+    async def generate(self, entity_type: str, fields: Dict[str, Any]) -> str:
+        """
+        Generate description using AI.
+        Falls back to template if AI fails.
+        """
+        description, _ = await self.generate_with_metadata(entity_type, fields)
+        return description
     
     async def _generate_openai(self, prompt: str) -> str:
         """Generate using OpenAI API."""

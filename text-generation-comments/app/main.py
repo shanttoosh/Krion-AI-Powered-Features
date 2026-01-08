@@ -47,6 +47,8 @@ from app.routers import review_comments
 app.include_router(review_comments.router)
 app.include_router(rephrase_router)
 app.include_router(feedback_router)
+from app.routers import project_workflows
+app.include_router(project_workflows.router)
 
 print("✅ Routers registered")
 

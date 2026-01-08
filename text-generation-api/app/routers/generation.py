@@ -15,31 +15,27 @@ async def generate_description(request: GenerationRequest) -> GenerationResponse
     
     - **entity_type**: Type of entity (issue, review, rfa)
     - **generation_mode**: Method to use (template or ai)
-    - **fields**: Dictionary of field values for the entity
+    - **fields**: Entity-specific fields (validated by Pydantic)
     
-    Returns a generated description that the user can edit.
+    Returns a generated description with metadata.
     """
     try:
-        # Validate entity type
-        valid_types = ["issue", "review", "rfa"]
-        if request.entity_type.value not in valid_types:
-            raise HTTPException(
-                status_code=400,
-                detail=f"Invalid entity_type. Must be one of: {valid_types}"
-            )
+        # Convert Pydantic model to dict for generators
+        fields_dict = request.fields.dict() if hasattr(request.fields, 'dict') else request.fields.model_dump()
         
-        # Generate description
-        description, mode_used = await description_generator.generate(
+        # Generate description with metadata
+        description, mode_used, metadata = await description_generator.generate(
             entity_type=request.entity_type.value,
             generation_mode=request.generation_mode,
-            fields=request.fields
+            fields=fields_dict
         )
         
         return GenerationResponse(
             success=True,
             generated_description=description,
             generation_mode=mode_used,
-            editable=True
+            editable=True,
+            metadata=metadata
         )
         
     except ValueError as e:

@@ -14,6 +14,7 @@ from app.comments_db.session import sync_engine
 
 # 🚨 CRITICAL: import models so SQLAlchemy registers tables
 import app.comments_db.models
+import app.models.workflow_models # New Workflow Models
 
 
 def create_tables():
