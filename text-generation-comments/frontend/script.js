@@ -338,6 +338,15 @@ async function enterReview(id) {
         reviewTitle.innerHTML = `${review.name} <span class="sub-text">${review.code} • ${review.status}</span>`;
         reviewDesc.textContent = review.description;
 
+                // ✅ FIX: Hide action buttons if review is completed
+        const actionBar = document.getElementById('review-action-bar');
+
+        if (review.status === "Approved" || review.status === "Rejected") {
+            actionBar.style.display = "none";
+        } else {
+            actionBar.style.display = "inline-flex";
+        }
+
         // Render Stepper (Need Total Steps - fetch workflow)
         // Optimization: In real app, review object should have workflow snapshot.
         // Here we fetch workflow again.
@@ -445,11 +454,17 @@ function clearReply() { replyingToComment = null; replyContext.classList.add('hi
 async function submitComment() {
     const text = commentInput.value;
     if (!text) return;
+
+    // Always fetch current review state
+    const review = await (await fetch(`${API_URL}/reviews/${currentReviewId}`)).json();
+
+    const intent = document.getElementById('comment-intent').value;
+
     await fetch(`${API_URL}/review-comments/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            review_id: currentReviewId, workflow_step: 1, user_name: userNameInput.value || "User", status: "Comment", text: text, parent_id: replyingToComment
+            review_id: currentReviewId, workflow_step: review.current_step, user_name: userNameInput.value || "User", status: intent, text: text, parent_id: replyingToComment
         })
     });
     commentInput.value = ''; clearReply(); loadComments();
@@ -469,7 +484,21 @@ async function triggerRephrase() {
         });
         const d = await res.json();
         if (d.success) {
-            suggestionList.innerHTML = d.suggestions.map(s => `<div class="suggestion-item" onclick="commentInput.value='${s.text}'; suggestionPopup.classList.add('hidden')">${s.text}</div>`).join('');
+           suggestionList.innerHTML = '';
+
+           d.suggestions.forEach(s => {
+               const item = document.createElement('div');
+               item.className = 'suggestion-item';
+               item.textContent = s.text;
+
+               item.addEventListener('click', () => {
+                    commentInput.value = s.text;
+                    suggestionPopup.classList.add('hidden');
+               });
+
+               suggestionList.appendChild(item);
+           });
+
         }
     } catch (e) { suggestionList.innerHTML = 'Error'; }
 }
