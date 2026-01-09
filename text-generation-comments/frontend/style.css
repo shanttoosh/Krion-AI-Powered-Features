@@ -322,7 +322,7 @@ body {
     color: #1976d2;
 }
 
-.status-progress {
+.status-inprogress {
     background: #fff3e0;
     color: #f57c00;
 }
@@ -330,6 +330,27 @@ body {
 .status-closed {
     background: #ffebee;
     color: #d32f2f;
+}
+
+.status-review {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* Status coloring for reviews */
+.status-approved {
+    background: #c8e6c9;
+    color: #1b5e20;
+}
+
+.status-revised {
+    background: #ffe0b2;
+    color: #e65100;
+}
+
+.status-rejected {
+    background: #ffcdd2;
+    color: #b71c1c;
 }
 
 /* --- Review Split Layout --- */
@@ -419,6 +440,14 @@ body {
     height: 2px;
     background: #eee;
     z-index: 1;
+    transform: scaleX(0.5);
+    /* Shorten line visual */
+}
+
+.step-line-sm {
+    height: 2px;
+    background: #ddd;
+    width: 20px;
 }
 
 /* --- Workflow Thread Improvements (Ported from Old) --- */
@@ -522,6 +551,25 @@ body {
     display: none;
 }
 
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
 .input-group textarea {
     width: 100%;
     height: 80px;
@@ -609,4 +657,138 @@ body {
 
 .toast.hidden {
     display: none;
+}
+
+/* --- New Phase 3 Styles (Modals & Cards) --- */
+
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.modal-actions button.btn-primary {
+    background: #008060;
+    border: none;
+    color: #fff;
+}
+
+/* Stat Cards */
+.stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    flex: 1;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.stat-val {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Workflow Listing */
+#workflow-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.workflow-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+}
+
+.workflow-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stepper-preview {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.step-dot {
+    width: 8px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 50%;
+}
+
+/* Action Buttons */
+.btn-action {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+}
+
+.btn-submit {
+    background: #28a745;
+}
+
+.btn-revise {
+    background: #f57c00;
+}
+
+.btn-reject {
+    background: #d32f2f;
 }

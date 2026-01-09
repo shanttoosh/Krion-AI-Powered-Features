@@ -22,7 +22,8 @@
                 <i class="fa-solid fa-cube"></i>
             </div>
             <nav class="global-nav">
-                <a href="#" class="nav-item active" title="Dashboard"><i class="fa-solid fa-chart-line"></i></a>
+                <a href="#" class="nav-item active" title="Dashboard" onclick="switchView('project-list')"><i
+                        class="fa-solid fa-chart-line"></i></a>
                 <a href="#" class="nav-item" title="Design"><i class="fa-solid fa-pen-ruler"></i></a>
                 <a href="#" class="nav-item" title="Execution"><i class="fa-solid fa-helmet-safety"></i></a>
                 <a href="#" class="nav-item" title="Documents"><i class="fa-solid fa-folder-open"></i></a>
@@ -48,13 +49,13 @@
                     <a href="#" class="p-nav-item" onclick="switchView('workflow-list')">
                         <i class="fa-solid fa-diagram-project"></i> Workflows
                     </a>
-                    <a href="#" class="p-nav-item">
+                    <a href="#" class="p-nav-item" onclick="switchView('role-management')">
                         <i class="fa-solid fa-users"></i> Roles
                     </a>
                 </div>
                 <div class="nav-group">
                     <div class="nav-header">Execution</div>
-                    <a href="#" class="p-nav-item" onclick="switchView('reviews-list')">
+                    <a href="#" class="p-nav-item" onclick="switchView('review-dashboard')">
                         <i class="fa-solid fa-list-check"></i> Reviews
                     </a>
                     <a href="#" class="p-nav-item">
@@ -89,7 +90,8 @@
             <div id="view-project-list" class="view-section">
                 <div class="page-header">
                     <h1>Projects</h1>
-                    <button class="btn-primary"><i class="fa-solid fa-plus"></i> New Project</button>
+                    <button class="btn-primary" onclick="alert('Feature coming in Phase 4')"><i
+                            class="fa-solid fa-plus"></i> New Project</button>
                 </div>
                 <div class="data-grid-container">
                     <table class="data-grid" id="project-table">
@@ -103,19 +105,95 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="project-list-body">
-                            <!-- Populated by JS -->
-                        </tbody>
+                        <tbody id="project-list-body"></tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- VIEW: Review Execution (Integrated Existing Tool) -->
+            <!-- VIEW: Project Dashboard (Placeholder) -->
+            <div id="view-project-dashboard" class="view-section hidden">
+                <div class="page-header">
+                    <h1>Project Dashboard</h1>
+                </div>
+                <div class="dashboard-stats">
+                    <!-- Stat Cards -->
+                    <div style="display:flex; gap:20px">
+                        <div class="stat-card">
+                            <h3>Active Reviews</h3><span class="stat-val">12</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Open Issues</h3><span class="stat-val">5</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Team Members</h3><span class="stat-val">8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW: Role Management -->
+            <div id="view-role-management" class="view-section hidden">
+                <div class="page-header">
+                    <h1>Role Management</h1>
+                    <button class="btn-primary" onclick="openRoleModal()"><i class="fa-solid fa-user-plus"></i> Assign
+                        Role</button>
+                </div>
+                <div class="data-grid-container">
+                    <table class="data-grid">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="role-list-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- VIEW: Workflow Builder -->
+            <div id="view-workflow-list" class="view-section hidden">
+                <div class="page-header">
+                    <h1>Workflows</h1>
+                    <button class="btn-primary" onclick="openWorkflowModal()"><i class="fa-solid fa-plus"></i> New
+                        Workflow</button>
+                </div>
+                <div id="workflow-list-container">
+                    <!-- Workflows Cards -->
+                </div>
+            </div>
+
+            <!-- VIEW: Review Dashboard -->
+            <div id="view-review-dashboard" class="view-section hidden">
+                <div class="page-header">
+                    <h1>Reviews</h1>
+                    <button class="btn-primary" onclick="openCreateReviewModal()"><i class="fa-solid fa-plus"></i> New
+                        Review</button>
+                </div>
+                <div class="data-grid-container">
+                    <table class="data-grid">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th>Step</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="review-list-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- VIEW: Review Execution (The Action Page) -->
             <div id="view-review-execution" class="view-section hidden">
                 <div class="page-header">
                     <div class="header-left">
-                        <button class="icon-btn-back" onclick="exitReview()"><i
-                                class="fa-solid fa-arrow-left"></i></button>
+                        <button class="icon-btn-back" onclick="switchView('review-dashboard')"><i
+                                class="fa-solid fa-arrow-left"></i> Back</button>
                         <div>
                             <h1 id="review-title">Column Grid Review</h1>
                             <span class="sub-text">RVW-1001 • In Review</span>
@@ -123,7 +201,14 @@
                     </div>
                     <div class="header-actions">
                         <button class="btn-secondary">View Drawings</button>
-                        <button class="btn-primary" onclick="openActionModal()">Action</button>
+                        <!-- Action Buttons -->
+                        <div id="review-action-bar" style="display:inline-flex; gap:10px; margin-left:10px">
+                            <button class="btn-action btn-submit" onclick="updateReviewStatus('SUBMIT')">Submit /
+                                Approve</button>
+                            <button class="btn-action btn-revise" onclick="updateReviewStatus('REVISE')">Request
+                                Revision</button>
+                            <button class="btn-action btn-reject" onclick="updateReviewStatus('REJECT')">Reject</button>
+                        </div>
                     </div>
                 </div>
 
@@ -137,23 +222,20 @@
                         </div>
                         <div class="detail-card">
                             <h3>Workflow Status</h3>
-                            <!-- Stepper -->
-                            <div class="stepper" id="review-stepper">
-                                <!-- Populated by JS -->
-                            </div>
+                            <div class="stepper" id="review-stepper"></div>
+                        </div>
+                        <div class="detail-card">
+                            <h3>History</h3>
+                            <ul id="action-history-list" style="padding-left:20px; font-size:13px; color:#555"></ul>
                         </div>
                     </div>
 
-                    <!-- Right: Comment Thread (Embedded existing UI) -->
+                    <!-- Right: Comment Thread -->
                     <div class="review-comments-panel">
                         <div class="panel-header">
                             <h3>Activity Log</h3>
                         </div>
-
-                        <!-- RE-USING EXISTING STRUCTURE -->
-                        <div class="comments-thread" id="comments-container">
-                            <!-- Comments go here -->
-                        </div>
+                        <div class="comments-thread" id="comments-container"></div>
 
                         <div class="add-comment-panel">
                             <h4>Add Comment / Reply</h4>
@@ -165,19 +247,14 @@
                                         class="fas fa-times"></i></button>
                             </div>
 
+                            <!-- Comment Inputs -->
                             <div class="input-group">
                                 <label>Your Name</label>
-                                <input type="text" id="user-name" placeholder="e.g. John Doe">
+                                <input type="text" id="user-name" placeholder="Name">
                             </div>
-
-                            <!-- Hidden Fields -->
-                            <input type="hidden" id="review-id" value="1">
-                            <input type="hidden" id="workflow-step" value="1">
-
                             <div class="input-group">
                                 <label>Comment</label>
                                 <textarea id="comment-text" placeholder="Type your comment..."></textarea>
-
                                 <!-- AI Suggestions -->
                                 <div id="suggestion-popup" class="suggestion-popup hidden">
                                     <div class="suggestion-header">
@@ -188,14 +265,21 @@
                                     <div id="suggestion-list" class="suggestion-list"></div>
                                 </div>
                             </div>
-
                             <div class="action-buttons">
-                                <button class="btn-ai" onclick="triggerRephrase()">
-                                    <i class="fas fa-wand-magic-sparkles"></i> AI Rephrase
-                                </button>
-                                <button class="btn-submit" onclick="submitComment()">
-                                    Post Comment <i class="fas fa-paper-plane"></i>
-                                </button>
+                                <div class="intent-select-group" style="display:flex; align-items:center; gap:10px;">
+                                    <label style="font-size:12px; font-weight:600; color:#555">AI Intent:</label>
+                                    <select id="comment-intent"
+                                        style="padding:5px; border-radius:4px; border:1px solid #ccc; font-size:12px">
+                                        <option value="comment">General Comment</option>
+                                        <option value="revise">Request Revision</option>
+                                        <option value="submit">Approve / Submit</option>
+                                        <option value="reject">Reject</option>
+                                    </select>
+                                </div>
+                                <button class="btn-ai" onclick="triggerRephrase()"><i
+                                        class="fas fa-wand-magic-sparkles"></i> AI Rephrase</button>
+                                <button class="btn-submit" onclick="submitComment()">Post Comment <i
+                                        class="fas fa-paper-plane"></i></button>
                             </div>
                         </div>
                     </div>
@@ -207,6 +291,62 @@
 
     <!-- Modals -->
     <div id="toast" class="toast hidden">Action Successful</div>
+
+    <!-- Role Modal -->
+    <div id="modal-role" class="modal hidden">
+        <div class="modal-content">
+            <h2>Assign Role</h2>
+            <div class="input-group">
+                <label>Select User</label>
+                <select id="role-user-select"></select>
+            </div>
+            <div class="input-group">
+                <label>Select Role</label>
+                <select id="role-select">
+                    <option>Project Manager</option>
+                    <option>Architect</option>
+                    <option>Structural Engineer</option>
+                    <option>MEP Lead</option>
+                    <option>Client Rep</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button onclick="closeModal('modal-role')">Cancel</button>
+                <button class="btn-primary" onclick="submitAssignRole()">Assign</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workflow Modal (Simple Version) -->
+    <div id="modal-workflow" class="modal hidden">
+        <div class="modal-content">
+            <h2>Create Workflow</h2>
+            <input type="text" id="wf-name" placeholder="Workflow Name (e.g. Structural Check)">
+            <input type="text" id="wf-cat" placeholder="Category (e.g., Structural)">
+            <label>Steps (Comma separated)</label>
+            <input type="text" id="wf-steps" placeholder="Step 1, Step 2, Step 3">
+            <div class="modal-actions">
+                <button onclick="closeModal('modal-workflow')">Cancel</button>
+                <button class="btn-primary" onclick="submitCreateWorkflow()">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Review Modal -->
+    <div id="modal-review" class="modal hidden">
+        <div class="modal-content">
+            <h2>Start New Review</h2>
+            <input type="text" id="rv-code" placeholder="Code (RVW-XXX)">
+            <input type="text" id="rv-name" placeholder="Review Name">
+            <label>Select Workflow</label>
+            <select id="rv-workflow-select"></select>
+            <textarea id="rv-desc" placeholder="Description..."></textarea>
+            <div class="modal-actions">
+                <button onclick="closeModal('modal-review')">Cancel</button>
+                <button class="btn-primary" onclick="submitCreateReview()">Start Review</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

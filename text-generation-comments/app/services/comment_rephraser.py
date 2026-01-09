@@ -140,7 +140,12 @@ class CommentRephraser:
 - Use constructive, helpful language
 - Focus on what needs to be changed
 - Be specific about required revisions
-- Encourage resubmission after corrections"""
+- Encourage resubmission after corrections""",
+            ReviewStatus.COMMENT: """
+- Use neutral, informative language
+- Ask clarifying questions if needed
+- Maintain professional but collaborative tone
+- Provide general observation or feedback"""
         }
         
         prompt = f"""You are a professional comment writer for Krion 6D, a construction project management system.

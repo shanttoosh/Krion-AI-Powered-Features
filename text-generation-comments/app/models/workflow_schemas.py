@@ -101,3 +101,16 @@ class ReviewResponse(ReviewBase):
 
     class Config:
         from_attributes = True
+
+# --- Project User Schemas ---
+class ProjectUserCreate(BaseModel):
+    user_id: str
+    user_name: str
+    role: str
+
+# --- Review Status Update ---
+class ReviewStatusUpdate(BaseModel):
+    action: str  # SUBMIT, REVISE, REJECT
+    comment: str
+    actor_name: str
+    step_number: int

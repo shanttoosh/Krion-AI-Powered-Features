@@ -12,7 +12,7 @@ class ReviewStatus(str, Enum):
     SUBMIT = "submit"
     REJECT = "reject"
     REVISE = "revise"
-
+    COMMENT = "comment"  # Generic comment
 
 class WorkflowContext(BaseModel):
     """Optional context about the workflow for better generation."""
