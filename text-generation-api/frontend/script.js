@@ -120,3 +120,86 @@ function initDates() {
 }
 
 document.addEventListener('DOMContentLoaded', initDates);
+
+let mediaRecorder;
+let audioChunks = [];
+let isRecording = false;
+let activeEntity = null;
+
+/* ================================
+   MIC TOGGLE (ENTITY AWARE)
+================================ */
+
+async function toggleMic(entityType, buttonEl) {
+    const descriptionBox = document.getElementById(`${entityType}-description`);
+
+    if (!descriptionBox) {
+        console.error(`Textarea not found for entity: ${entityType}`);
+        return;
+    }
+
+    if (!isRecording) {
+        // 🎤 START RECORDING
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+        mediaRecorder = new MediaRecorder(stream, { mimeType: "audio/webm" });
+        audioChunks = [];
+        activeEntity = entityType;
+
+        mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+
+        mediaRecorder.onstop = async () => {
+            const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+            await sendSpeechToWhisper(audioBlob, descriptionBox);
+        };
+
+        mediaRecorder.start();
+        isRecording = true;
+
+        buttonEl.classList.add("recording");
+        buttonEl.innerText = "⏹️";
+        descriptionBox.placeholder = "🎧 Listening...";
+    } else {
+        // ⏹️ STOP RECORDING
+        mediaRecorder.stop();
+        isRecording = false;
+
+        buttonEl.classList.remove("recording");
+        buttonEl.innerText = "🎤";
+    }
+}
+
+/* ================================
+   SEND AUDIO TO WHISPER
+================================ */
+
+async function sendSpeechToWhisper(audioBlob, descriptionBox) {
+    descriptionBox.value = "⏳ Transcribing speech...";
+
+    const formData = new FormData();
+    formData.append("file", audioBlob, "speech.webm");
+
+    try {
+        const response = await fetch(
+            "http://127.0.0.1:8000/api/v1/whisper/transcribe",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+        const data = await response.json();
+
+        if (data.english_text && data.english_text.trim()) {
+            descriptionBox.value = data.english_text;
+        } else {
+            descriptionBox.value = "";
+            descriptionBox.placeholder = "⚠️ Could not understand speech clearly.";
+        }
+    } catch (err) {
+        console.error(err);
+        descriptionBox.value = "";
+        descriptionBox.placeholder = "❌ Speech recognition failed.";
+    }
+}
+

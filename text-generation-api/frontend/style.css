@@ -342,6 +342,33 @@ body {
     gap: 12px;
 }
 
+.btn-mic {
+    padding: 10px 12px;
+    font-size: 18px;
+    border-radius: 50%;
+    background: var(--White-color);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-mic:hover {
+    background: var(--bs-gray-100);
+}
+
+.btn-mic.recording {
+    background: var(--bs-danger);
+    color: white;
+    border-color: var(--bs-danger);
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(218, 41, 46, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(218, 41, 46, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(218, 41, 46, 0); }
+}
+
 /* Loading Overlay */
 .loading-overlay {
     position: fixed;

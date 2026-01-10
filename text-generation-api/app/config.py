@@ -28,5 +28,8 @@ class Settings:
         # Gemini Model Settings
         self.gemini_model = os.getenv("GEMINI_MODEL", "gemini-pro")
 
+        # Whisper (Speech-to-Text) Settings
+        self.whisper_model_size = os.getenv("WHISPER_MODEL_SIZE", "small") 
+
 
 settings = Settings()
