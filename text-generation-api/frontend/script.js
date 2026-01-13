@@ -123,83 +123,130 @@ document.addEventListener('DOMContentLoaded', initDates);
 
 let mediaRecorder;
 let audioChunks = [];
-let isRecording = false;
-let activeEntity = null;
+let recordingStart;
+let timerInterval;
 
-/* ================================
-   MIC TOGGLE (ENTITY AWARE)
-================================ */
+async function toggleMic(type, btn) {
+  if (mediaRecorder && mediaRecorder.state === "recording") {
+    stopRecording(type, btn);
+  } else {
+    startRecording(btn, type);
+  }
+}
 
-async function toggleMic(entityType, buttonEl) {
-    const descriptionBox = document.getElementById(`${entityType}-description`);
+function getMicIds(type) {
+  return {
+    status: document.getElementById(`mic-status-${type}`),
+    timer: document.getElementById(`mic-timer-${type}`)
+  };
+}
 
-    if (!descriptionBox) {
-        console.error(`Textarea not found for entity: ${entityType}`);
-        return;
+
+async function startRecording(btn, type) {
+  audioChunks = [];
+
+  const { status, timer } = getMicIds(type);
+
+  const stream = await navigator.mediaDevices.getUserMedia({
+    audio: {
+      channelCount: 1,
+      echoCancellation: true,
+      noiseSuppression: true,
+      autoGainControl: true
     }
+  });
 
-    if (!isRecording) {
-        // 🎤 START RECORDING
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  mediaRecorder = new MediaRecorder(stream, { mimeType: "audio/webm" });
 
-        mediaRecorder = new MediaRecorder(stream, { mimeType: "audio/webm" });
-        audioChunks = [];
-        activeEntity = entityType;
+  mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
 
-        mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+  mediaRecorder.start();
 
-        mediaRecorder.onstop = async () => {
-            const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
-            await sendSpeechToWhisper(audioBlob, descriptionBox);
-        };
+  btn.classList.add("recording");
+  btn.textContent = "⏹️";
 
-        mediaRecorder.start();
-        isRecording = true;
+  recordingStart = Date.now();
+  status.classList.remove("hidden");
 
-        buttonEl.classList.add("recording");
-        buttonEl.innerText = "⏹️";
-        descriptionBox.placeholder = "🎧 Listening...";
-    } else {
-        // ⏹️ STOP RECORDING
-        mediaRecorder.stop();
-        isRecording = false;
+  timerInterval = setInterval(() => {
+    timer.textContent =
+      ((Date.now() - recordingStart) / 1000).toFixed(1) + "s";
+  }, 100);
+}
 
-        buttonEl.classList.remove("recording");
-        buttonEl.innerText = "🎤";
-    }
+
+async function stopRecording(type, btn) {
+  clearInterval(timerInterval);
+
+  const { status } = getMicIds(type);
+
+  btn.classList.remove("recording");
+  btn.textContent = "🎙️";
+  status.classList.add("hidden");
+
+  const duration = (Date.now() - recordingStart) / 1000;
+
+  if (duration < 2) {
+    alert("Please speak for at least 2 seconds");
+    mediaRecorder.stop();
+    return;
+  }
+
+  // ✅ SET HANDLER FIRST
+  mediaRecorder.onstop = async () => {
+    const blob = new Blob(audioChunks, { type: "audio/webm" });
+    console.log("🎤 Audio blob size:", blob.size);
+    sendAudio(blob, type);
+  };
+
+  // ✅ THEN STOP
+  mediaRecorder.stop();
 }
 
 /* ================================
    SEND AUDIO TO WHISPER
 ================================ */
 
-async function sendSpeechToWhisper(audioBlob, descriptionBox) {
-    descriptionBox.value = "⏳ Transcribing speech...";
+async function sendAudio(blob, type) {
+  const formData = new FormData();
+  formData.append("file", blob, "speech.webm");
 
-    const formData = new FormData();
-    formData.append("file", audioBlob, "speech.webm");
+  showLoading("Processing speech...");
 
-    try {
-        const response = await fetch(
-            "http://127.0.0.1:8000/api/v1/whisper/transcribe",
-            {
-                method: "POST",
-                body: formData
-            }
-        );
+  try {
+    const res = await fetch(`${API_URL}/whisper/transcribe`, {
+      method: "POST",
+      body: formData
+    });
 
-        const data = await response.json();
+    const data = await res.json();
+    hideLoading();
 
-        if (data.english_text && data.english_text.trim()) {
-            descriptionBox.value = data.english_text;
-        } else {
-            descriptionBox.value = "";
-            descriptionBox.placeholder = "⚠️ Could not understand speech clearly.";
-        }
-    } catch (err) {
-        console.error(err);
-        descriptionBox.value = "";
-        descriptionBox.placeholder = "❌ Speech recognition failed.";
+    if (!data.success) {
+      alert(data.warning || "Could not understand speech clearly.");
+      return;
     }
+
+    const textarea =
+      type === "review"
+        ? document.getElementById("review-description")
+        : document.getElementById("rfa-description");
+
+    textarea.value = data.english_text || data.speech_text;
+
+  } catch (err) {
+    hideLoading();
+    console.error(err);
+    alert("Speech service failed. Check backend.");
+  }
 }
 
+function showLoading(text) {
+  const overlay = document.getElementById("loading-overlay");
+  overlay.querySelector("p").textContent = text;
+  overlay.classList.add("active");
+}
+
+function hideLoading() {
+  document.getElementById("loading-overlay").classList.remove("active");
+}

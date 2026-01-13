@@ -13,6 +13,7 @@ from app.routers import generation, whisper
 from app.config import settings
 from app.models.whisper_model import get_whisper_model
 
+
 # ------------------------------------------------------
 # Logging Configuration
 # ------------------------------------------------------
@@ -91,13 +92,6 @@ app.include_router(whisper.router)
 # ------------------------------------------------------
 # Root & Health
 # ------------------------------------------------------
-
-
-@app.on_event("startup")
-def warmup_whisper():
-    logger.info("Warming up Whisper model...")
-    get_whisper_model()
-    logger.info("Whisper model loaded and ready")
 
 @app.get("/")
 async def root():

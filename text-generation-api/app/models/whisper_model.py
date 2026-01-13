@@ -1,71 +1,41 @@
-import os
+import time
 import whisper
 from app.config import settings
 
-# Ensure FFmpeg is visible
-os.environ["PATH"] += os.pathsep + r"C:\Users\Krion\Documents\ffmpeg\bin"
-
-
-class WhisperVoiceModel:
+class WhisperModel:
     def __init__(self):
         self.model = whisper.load_model(settings.whisper_model_size)
 
-    def transcribe_to_english(self, audio_path: str):
-        """
-        Single-pass translation for speed + confidence filtering
-        """
+    def transcribe(self, audio_path: str):
+        start = time.time()
 
-        # -----------------------------
-        # Whisper inference (ONE pass)
-        # -----------------------------
         result = self.model.transcribe(
             audio_path,
-            task="translate",
+            task="transcribe",
             temperature=0.0,
             beam_size=5,
             best_of=5,
-            no_speech_threshold=0.6,
-            logprob_threshold=-1.0,
-            compression_ratio_threshold=2.0,
             condition_on_previous_text=False
         )
 
-        # -----------------------------
-        # Confidence guard
-        # -----------------------------
         segments = result.get("segments", [])
+        avg_logprob = sum(
+            s.get("avg_logprob", -10.0) for s in segments
+        ) / max(len(segments), 1)
 
-        if segments:
-            avg_logprob = sum(
-                s.get("avg_logprob", -10.0) for s in segments
-            ) / len(segments)
-        else:
-            avg_logprob = -10.0
+        confidence = max(0.0, min(1.0, (avg_logprob + 2) / 2))
 
-        if avg_logprob < -1.2:
-            return {
-                "detected_language": result.get("language", "unknown"),
-                "english_text": "",
-                "warning": "Low confidence audio – transcription suppressed"
-            }
-
-        # -----------------------------
-        # Final output
-        # -----------------------------
         return {
-            "detected_language": result.get("language", "unknown"),
-            "english_text": result["text"].strip()
+            "text": result.get("text", "").strip(),
+            "language": result.get("language", "unknown"),
+            "confidence": round(confidence, 3),
+            "whisper_seconds": round(time.time() - start, 3)
         }
 
-
-# -------------------------------------------------
-# Lazy-loaded singleton (FastAPI safe)
-# -------------------------------------------------
-_whisper_model = None
-
+_whisper = None
 
 def get_whisper_model():
-    global _whisper_model
-    if _whisper_model is None:
-        _whisper_model = WhisperVoiceModel()
-    return _whisper_model
+    global _whisper
+    if _whisper is None:
+        _whisper = WhisperModel()
+    return _whisper

@@ -1,31 +1,45 @@
-import os
 import subprocess
+import os
+import uuid
+import wave
 
-def preprocess_audio(
-    raw_audio_path: str,
-    output_dir: str
-) -> str:
+def get_audio_duration(path: str) -> float:
+    try:
+        with wave.open(path, "rb") as wf:
+            frames = wf.getnframes()
+            rate = wf.getframerate()
+            return frames / float(rate)
+    except Exception:
+        return 0.0
+
+
+def preprocess_audio(input_path: str):
     """
-    Speech-optimized preprocessing for Whisper
-    Returns path to cleaned WAV
+    Converts audio to:
+    - mono
+    - 16kHz
+    - WAV (Whisper required)
     """
 
-    if not os.path.exists(raw_audio_path):
-        raise FileNotFoundError(f"Audio not found: {raw_audio_path}")
+    output_path = input_path.replace(".webm", "_clean.wav")
 
-    os.makedirs(output_dir, exist_ok=True)
-
-    output_path = os.path.join(output_dir, "clean_audio.wav")
-
-    command = [
+    cmd = [
         "ffmpeg",
         "-y",
-        "-i", raw_audio_path,
+        "-i", input_path,
         "-ac", "1",
         "-ar", "16000",
-        "-af", "highpass=f=80,lowpass=f=7600,volume=1.2",
+        "-vn",
         output_path
     ]
 
-    subprocess.run(command, check=True)
-    return output_path
+    subprocess.run(
+        cmd,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=True
+    )
+
+    duration = get_audio_duration(output_path)
+
+    return output_path, duration
